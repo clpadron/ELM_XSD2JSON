@@ -1,0 +1,677 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "IscedFOetCodeEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/00"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/000"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0000"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/001"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0011"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/002"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0021"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/003"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0031"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/009"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0099"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/01"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/011"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0110"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0111"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0112"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0113"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0114"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0119"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/018"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0188"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/02"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/020"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0200"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/021"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0210"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0211"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0212"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0213"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0214"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0215"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0219"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/022"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0220"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0221"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0222"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0223"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0228"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0229"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/023"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0230"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0231"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0232"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0239"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/028"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0288"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/029"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0299"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/03"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/030"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0300"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/031"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0310"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0311"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0312"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0313"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0314"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0319"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/032"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0320"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0321"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0322"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0329"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/038"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0388"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/039"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0399"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/04"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/040"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0400"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/041"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0410"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0411"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0412"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0413"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0414"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0415"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0416"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0417"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0419"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/042"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0421"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/048"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0488"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/049"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0499"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/05"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/050"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0500"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/051"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0510"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0511"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0512"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0519"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/052"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0520"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0521"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0522"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0529"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/053"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0530"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0531"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0532"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0533"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0539"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/054"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0540"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0541"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0542"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/058"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0588"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/059"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0599"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/06"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/061"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0610"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0611"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0612"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0613"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0619"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/068"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0688"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/07"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/070"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0700"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/071"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0710"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0711"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0712"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0713"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0714"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0715"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0716"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0719"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/072"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0720"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0721"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0722"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0723"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0724"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0729"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/073"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0730"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0731"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0732"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/078"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0788"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/079"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0799"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/08"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/080"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0800"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/081"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0810"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0811"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0812"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0819"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/082"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0821"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/083"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0831"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/084"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0841"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/088"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0888"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/089"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0899"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/09"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/090"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0900"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/091"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0910"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0911"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0912"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0913"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0914"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0915"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0916"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0917"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0919"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/092"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0920"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0921"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0922"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0923"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0929"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/098"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0988"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/099"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/0999"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/10"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/100"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1000"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/101"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1010"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1011"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1012"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1013"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1014"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1015"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1019"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/102"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1020"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1021"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1022"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1029"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/103"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1030"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1031"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1032"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1039"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/104"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1041"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/108"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1088"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/109"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/1099"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/99"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/999"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/isced-f/9999"
+            }
+         ]
+      }
+   }
+}
+

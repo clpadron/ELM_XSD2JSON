@@ -1,0 +1,87 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.4.0",
+   "include": [
+      {
+         "@schemaLocation": "edci_simpleContentTypes.xsd"
+      },
+      {
+         "@schemaLocation": "edci_commonTypes.xsd"
+      }
+   ],
+   "complexType": {
+      "@name": "ContactPointType",
+      "annotation": {
+         "documentation": null
+      },
+      "sequence": {
+         "element": [
+            {
+               "@name": "note",
+               "@type": "NoteType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "A note about the contactpoint. E.g. a note about the usage and availibility about this contactpoint."
+               }
+            },
+            {
+               "@name": "description",
+               "@type": "NoteType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "A free text describing the contact details."
+               }
+            },
+            {
+               "@name": "address",
+               "@type": "AddressType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "A postal address used for contacting the agent."
+               }
+            },
+            {
+               "@name": "phone",
+               "@type": "PhoneType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "A phone number used for contacting the agent."
+               }
+            },
+            {
+               "@name": "mailBox",
+               "@type": "MBoxType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "An email address used for contacting the agent."
+               }
+            },
+            {
+               "@name": "webresource",
+               "@type": "InteractiveWebResourceType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "A contact form used for contacting the agent."
+               }
+            },
+            {
+               "@name": "wallet",
+               "@type": "MBoxType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "The address of an electronic wallet where credentials may be deposited."
+               }
+            }
+         ]
+      }
+   }
+}
+

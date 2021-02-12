@@ -1,0 +1,163 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.3.0",
+   "include": {
+      "@schemaLocation": "edci_credential.xsd"
+   },
+   "element": {
+      "@name": "verifiablePresentation",
+      "@type": "VerifiablePresentationType",
+      "annotation": {
+         "documentation": "A verifiable presentation of a set of europass credentials."
+      },
+      "key": {
+         "@name": "credentialKey",
+         "selector": {
+            "@xpath": "eup:verifiableCredentials/eup:verifiableCredential/eup:europassCredential"
+         },
+         "field": {
+            "@xpath": "@id"
+         }
+      },
+      "keyref": {
+         "@name": "credentialKeyReference",
+         "@refer": "credentialKey",
+         "selector": {
+            "@xpath": "eup:verification/eup:subject"
+         },
+         "field": {
+            "@xpath": "@idref"
+         }
+      }
+   },
+   "complexType": [
+      {
+         "@name": "VerifiablePresentationType",
+         "annotation": {
+            "documentation": "A verifiable presentation of a set of europass credentials."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "verifiableCredentials",
+                  "@type": "VerifiableCredentialsType",
+                  "annotation": {
+                     "documentation": "Container element that records all the verifiable credentials that are presented in this presentation."
+                  }
+               },
+               {
+                  "@name": "verification",
+                  "@type": "VerificationType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               },
+               {
+                  "@name": "proof"
+               }
+            ]
+         },
+         "attribute": [
+            {
+               "@name": "id",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A portable identifier of the presentation (i.e. a urn in the uuid namespace, urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6)"
+               }
+            },
+            {
+               "@name": "xsdVersion",
+               "@use": "optional",
+               "@default": "0.3.0",
+               "annotation": {
+                  "documentation": "used xsd version"
+               },
+               "simpleType": {
+                  "restriction": {
+                     "@base": "xs:token",
+                     "enumeration": {
+                        "@value": "0.3.0"
+                     }
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "@name": "VerifiableCredentialsType",
+         "annotation": {
+            "documentation": "Container element that records all the verifiable credentials that are presented in this presentation."
+         },
+         "sequence": {
+            "element": {
+               "@name": "verifiableCredential",
+               "@type": "VerifiableCredentialDefinedAsEuropassCredentialType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "Element that contains a europass credential"
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerifiableCredentialDefinedAsEuropassCredentialType",
+         "annotation": {
+            "documentation": "Element that contains a europass credential."
+         },
+         "sequence": {
+            "element": {
+               "@ref": "europassCredential",
+               "annotation": {
+                  "documentation": "A europass credential element as defined in the credential xsd schema. The xml content will be validated against the credential xsd schema. This makes the presentation xsd schema hardly dependant on the credential xsd schema. Credentials according an older or newer version of the credential xsd schema than the one used by this presentation xsd schema cannot be included. Also the xml header from the original credential xml document cannot be included (i.e. <?xml version=\"1.0\" encoding=\"UTF-8\"?> )."
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerificationType",
+         "sequence": {
+            "element": [
+               {
+                  "@name": "subject",
+                  "@type": "IdReferenceType",
+                  "annotation": {
+                     "documentation": "The credential which is the subject of this set of verification checks. It must refer to an existing 'europassCredential'-record in the 'verifiableCredentials'-section of this presentation."
+                  }
+               },
+               {
+                  "@name": "verificationCheck",
+                  "@type": "VerificationCheckType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "VerificationCheckType",
+         "sequence": {
+            "element": [
+               {
+                  "@name": "type",
+                  "@type": "VerificationCheckCodeType"
+               },
+               {
+                  "@name": "status",
+                  "@type": "VerificationStatusCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "1"
+               },
+               {
+                  "@name": "description",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               }
+            ]
+         }
+      }
+   ]
+}
+

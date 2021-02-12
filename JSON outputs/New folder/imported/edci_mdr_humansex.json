@@ -1,0 +1,23 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "MDRHumanSexEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://publications.europa.eu/resource/authority/human-sex/MALE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/human-sex/FEMALE"
+            }
+         ]
+      }
+   }
+}
+

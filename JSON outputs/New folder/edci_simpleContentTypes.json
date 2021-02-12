@@ -1,0 +1,893 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.4.0",
+   "include": {
+      "@schemaLocation": "edci_individuals.xsd"
+   },
+   "complexType": [
+      {
+         "@name": "LanguageStringType",
+         "annotation": {
+            "documentation": "A character string (i.e. a finite set of characters) in the form of words of a language."
+         },
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:string",
+               "attribute": {
+                  "@name": "lang",
+                  "@type": "LanguageCharCodeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The language used in the character string."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "TextType",
+         "annotation": {
+            "documentation": "A formatted character string (i.e. a finite set of characters) in the form of words of a language."
+         },
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:string",
+               "attribute": [
+                  {
+                     "@name": "lang",
+                     "@type": "LanguageCharCodeEnumType",
+                     "@use": "required",
+                     "annotation": {
+                        "documentation": "The language used in the text"
+                     }
+                  },
+                  {
+                     "@name": "content-type",
+                     "@type": "TextContentTypeCodeEnumType",
+                     "@use": "required",
+                     "annotation": {
+                        "documentation": "The text format specified by the corresponding mimetype (text/plain, text/html)"
+                     }
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "@name": "NoteType",
+         "annotation": {
+            "documentation": "A formatted and annotated text fragment."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "text",
+                  "@type": "TextType",
+                  "annotation": {
+                     "documentation": "A formatted character string (i.e. a finite set of characters) generally in the form of words of a language."
+                  }
+               },
+               {
+                  "@name": "subject",
+                  "@type": "SubjectTypeCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A subject or topic that is described in the text."
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "@name": "NotationType",
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:string",
+               "attribute": {
+                  "@name": "schemeID",
+                  "@type": "xs:anyURI",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The syntax encoding scheme. A particular system of notations or classification codes."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "IdentifierType",
+         "annotation": {
+            "documentation": {
+               "@lang": "en",
+               "#text": "Identifiers are needed to identify and link resources in a unique and persistent way.\n\t\t\t\tA resource identifier must be unique and persistent, meaning the identifier will always refer to the same resource and cannot be reused to identify other resources.\n\t\t\t\tA resource identifier consists of:\n\t\t\t\t - a string identifier, unique and persistent within the scope of the issuing system.\n\t\t\t\t - a unique identifier of the publishing system that issued the string identifier for that particular resource.\n\t\t\t\tThe combination of both, the string identifier and the unique identifier of the issuing system, makes the resource identifier globally unique.\n\t\t\t\t\n\t\t\t\tThe IdentifierType is used to describe a full (alternative) identifier of an entity or resource.\n\t\t\t\t- The text content of the IdentifierType-element contains the character string to identify and distinguish uniquely the resource within the scope of the identification scheme\n\t\t\t\t- The schemeID attribute is used to specify the identifier scheme. The identifier schema (or identifier register) refers to the agent/system that issued the identifier, it specifies where the identifier originates from.\n\t\t\t\t  It is the namespace in which the identifier is unique and persistent.\n\t\t\t\t\t\t\t\t\n\t\t\t\tThe other attributes of the IdentifierType-element provide supplementary information such as the identifier of the used code list and the agency that maintains this list"
+            }
+         },
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:normalizedString",
+               "attribute": [
+                  {
+                     "@name": "schemeID",
+                     "@type": "xs:normalizedString",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": "Identification of the identifier scheme or the identifier register (~ the managing/originating system of the identifier). This can be seen as the namespace in which the assigned identifier is unique."
+                     }
+                  },
+                  {
+                     "@name": "schemeAgencyID",
+                     "@type": "xs:normalizedString",
+                     "annotation": {
+                        "documentation": "Identification of the agent that manages the identifier scheme. The agent that issued the identifier."
+                     }
+                  },
+                  {
+                     "@name": "schemeAgencyName",
+                     "@type": "xs:string",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": "The name of the agent that manages the identifier scheme. The agent that issued the identifier."
+                     }
+                  },
+                  {
+                     "@name": "issuedDate",
+                     "@type": "xs:dateTime",
+                     "annotation": {
+                        "documentation": "The date on which the identifier was issued."
+                     }
+                  },
+                  {
+                     "@name": "type",
+                     "@type": "xs:token",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": "A code used to classify the type of identifier"
+                     }
+                  },
+                  {
+                     "@name": "spatialID",
+                     "@type": "LocationCodeContentType",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": "The related country or region code (jurisdiction) of a legal identifier. A legal identifier is a formally issued identifier by a given authorithy within a given jurisdiction. The identifier has a spatial context."
+                     }
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "@name": "LegalIdentifierType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "IdentifierType",
+               "attribute": {
+                  "@name": "spatialID",
+                  "@type": "LocationCodeContentType",
+                  "@use": "required"
+               }
+            }
+         }
+      },
+      {
+         "@name": "CodeType",
+         "annotation": {
+            "documentation": {
+               "@lang": "en",
+               "#text": "A term from a controlled vocabulary. \n\t\t\t    \n\t\t\t\tA code is a character string of letters, numbers, special characters (except escape sequences), and symbols.\n\t\t\t\tIt represents a definitive value, a method, or a property description in an abbreviated or language-independent form that is part of a finite list of allowed values.\n\t\t\t\tThe CodeType is used for all elements that are used to enable a common coded value representation. Typical example of code types are: Country Code and Language Code.\n\t\t\t\tThe CodeType should be used in case of a finite list of allowed values. The IdentifierType should be used in case of an infinite set of objects.\n\t\t\t\t\n\t\t\t\tThe text content of the CodeType-element is a character string that for brevity and/or languange independence may be used to represent or replace a definitive value or text of an attribute.\n\t\t\t\tThe attributes of the CodeType-element provide supplementary information such as the identifier of the used code list and the agency that maintains this list."
+            }
+         },
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:normalizedString",
+               "attribute": [
+                  {
+                     "@name": "uri",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": {
+                           "@lang": "en",
+                           "#text": "A URI identifier of the code"
+                        }
+                     }
+                  },
+                  {
+                     "@name": "listID",
+                     "@type": "xs:normalizedString",
+                     "@use": "optional",
+                     "annotation": {
+                        "documentation": {
+                           "@lang": "en",
+                           "#text": "The code List Identifier. The identification of a list of codes."
+                        }
+                     }
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "@name": "URIBasedCodeType",
+         "annotation": {
+            "documentation": "A code (i.e a code from a controlled vocabulary) that can be fully identified by a URI"
+         },
+         "simpleContent": {
+            "restriction": {
+               "@base": "CodeType",
+               "pattern": {
+                  "@value": ""
+               },
+               "attribute": [
+                  {
+                     "@name": "uri",
+                     "@use": "required",
+                     "annotation": {
+                        "documentation": "A URI identifier of the code"
+                     }
+                  },
+                  {
+                     "@name": "listID",
+                     "@use": "prohibited"
+                  }
+               ]
+            }
+         }
+      },
+      {
+         "@name": "ColorNotationType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "NotationType",
+               "pattern": {
+                  "@value": "#([0-9]|[A-F]){6}"
+               },
+               "attribute": {
+                  "@name": "schemeID",
+                  "@use": "required",
+                  "simpleType": {
+                     "restriction": {
+                        "@base": "xs:anyURI",
+                        "enumeration": {
+                           "@value": "http://data.europa.eu/europass/colorNotation/hexadecimal"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LocationCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LocationCodeContentType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies a location(i.e. a country or region)"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "CountryCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "CountryCodeContentType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies a country"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "GenderCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "GenderEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the gender"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "IscedFOetCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "IscedFOetCodeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the ISCED  FoET 2013 classification."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "EQFLevelType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "EQFLevelEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the EQF level."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LearningOutcomeTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LearningOutcomeTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the skill type."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "ReusabilityLevelType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "ReusabilityLevelEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the reusability level."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "SkillAlignmentTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "SkillAlignmentTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the semantics of the alignment to the ESCO skill."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "QualificationFrameworkType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "QualificationFrameworkEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the qualification framework."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LearningSettingTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LearningSettingTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of learning (the learning setting)."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LearningModeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LearningModeTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of learning or assessment"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "CredentialTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "CredentialTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of credential."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "ActivityTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "ActivityTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of activity."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LearningOpportunityTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LearningOpportunityTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of learning opportunity."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "TargetGroupCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "TargetGroupCodeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the target group of a learning opportunity."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "AssessmentTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "AssessmentTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of assessment."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "IDVerificationMethodType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "IDVerificationMethodEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the method of ID verification."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LearningScheduleTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LearningScheduleTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the learning schedule of learning opportunity."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "EscoOrganizationTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "EscoOrganizationTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the esco organization category."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "AccreditationTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "AccreditationTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifiesy the type of accreditation."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "EntitlementTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "EntitlementTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of entitlement."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "EntitlementStatusType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "EntitlementStatusEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the status of the entitlement."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "LanguageCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "LanguageEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the language."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "SubjectTypeCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "SubjectTypeCodeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the topic or subject of a text or document."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "CommunicationChannelTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "CommunicationChannelEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of communication channel."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "CommunicationChannelUsageType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "CommunicationChannelUseEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of use of the communication channel."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "MediaTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "MediaTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the mediatype of a media object."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "ImageMediaTypeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "MediaTypeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "ImageMediaTypeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the mediatype of an image object."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "ContentEncodingType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "ContentEncodingEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the encoding applied to encode the binary data contents of a media resource."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "NumericScoreType",
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:decimal",
+               "attribute": {
+                  "@name": "schemeID",
+                  "@type": "xs:normalizedString",
+                  "@use": "optional",
+                  "annotation": {
+                     "documentation": "The grading or scoring scheme ID."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "TextScoreType",
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:string",
+               "attribute": {
+                  "@name": "schemeID",
+                  "@type": "xs:normalizedString",
+                  "@use": "optional",
+                  "annotation": {
+                     "documentation": "The grading or scoring scheme ID."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "CreditPointsType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "NumericScoreType",
+               "attribute": {
+                  "@name": "schemeID",
+                  "@type": "CreditPointSystemEnumType",
+                  "@use": "optional",
+                  "annotation": {
+                     "documentation": "The credit point system used when assigning credits to a learning specification (e.g ECVET)"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "ECTSCreditPointsType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "NumericScoreType",
+               "attribute": {
+                  "@name": "schemeID",
+                  "@type": "ECTSCreditPointSystemEnumType",
+                  "@use": "optional",
+                  "annotation": {
+                     "documentation": "The credit point system used when assigning credits to a learning specification (e.g ECTS credit points system)"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "AmountType",
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:decimal",
+               "attribute": {
+                  "@name": "unit",
+                  "@type": "CurrencyEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the currency in which the amount is indicated/expressed."
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerificationCheckCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "VerificationCheckCodeEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of learning or assessment"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerificationStatusCodeType",
+         "simpleContent": {
+            "restriction": {
+               "@base": "URIBasedCodeType",
+               "attribute": {
+                  "@name": "uri",
+                  "@type": "VerificationStatusEnumType",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "The URI identifier of a known code that indicates/specifies the type of learning or assessment"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "IdReferenceType",
+         "annotation": {
+            "documentation": "A link or reference to another entity record in the credential document."
+         },
+         "attribute": {
+            "@name": "idref",
+            "@type": "xs:anyURI",
+            "@use": "required",
+            "annotation": {
+               "documentation": "The id of the referenced entity (record)."
+            }
+         }
+      }
+   ],
+   "simpleType": [
+      {
+         "@name": "IdType",
+         "annotation": {
+            "documentation": "A portable identifier of an entity (i.e. a urn in the uuid namespace)."
+         },
+         "restriction": {
+            "@base": "xs:anyURI"
+         }
+      },
+      {
+         "@name": "DocumentURLType",
+         "restriction": {
+            "@base": "xs:anyURI",
+            "pattern": [
+               {
+                  "@value": "http://.*"
+               },
+               {
+                  "@value": "https://.*"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "MailToUriType",
+         "annotation": {
+            "documentation": {
+               "@lang": "en",
+               "#text": "mailto: URI scheme conform to RFC 2368."
+            }
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "pattern": {
+               "@value": "mailto:.*"
+            }
+         }
+      }
+   ]
+}
+

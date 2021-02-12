@@ -1,0 +1,427 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.3.0",
+   "include": [
+      {
+         "@schemaLocation": "edci_simpleContentTypes.xsd"
+      },
+      {
+         "@schemaLocation": "edci_commonTypes.xsd"
+      }
+   ],
+   "complexType": [
+      {
+         "@name": "SemanticFrameworkType",
+         "annotation": {
+            "documentation": "The details about a semantic framework or system. Used to describe other semantic frameworks to which resources in EDCI can be associated, tagged or aligned with"
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "identifier",
+                  "@type": "IdentifierType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "An alternative identifier of the semantic framework or system."
+                  }
+               },
+               {
+                  "@name": "title",
+                  "@type": "LanguageStringType",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "description",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A free text describing the semantic framework. Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "supplementaryDoc",
+                  "@type": "DocumentType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A public web document containing additional documentation about the semantic framework. It can be any document containing further information about the the semantic framework. The document can be a web page that can be navigated or a downloadable file"
+                  }
+               }
+            ]
+         },
+         "attribute": {
+            "@name": "id",
+            "@type": "IdType",
+            "@use": "required",
+            "annotation": {
+               "documentation": "A portable identifier of the the semantic framework (i.e. a urn in the uuid namespace). It is this identifier that MUST be used to link or refer to this semantic framework from other places within the credential document."
+            }
+         }
+      },
+      {
+         "@name": "QualificationAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an association of a qualification to a qualification code in a certain framework or system describing qualification."
+         },
+         "sequence": null,
+         "attribute": [
+            {
+               "@name": "targetID",
+               "@type": "xs:anyURI",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URI identifier of the associated qualification in the targeted framework."
+               }
+            },
+            {
+               "@name": "targetNotation",
+               "@type": "xs:token",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A notation or code of the associated qualification in the targeted framework."
+               }
+            },
+            {
+               "@name": "targetFrameworkID",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The ID of the framework or system used to describe qualifications."
+               }
+            },
+            {
+               "@name": "targetFrameworkName",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The name of the framework or system used to describe qualifications."
+               }
+            },
+            {
+               "@name": "targetFrameworkUrl",
+               "@type": "DocumentURLType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URL of the framework or system used to describe qualifications."
+               }
+            },
+            {
+               "@name": "targetFrameworkSpatialID",
+               "@type": "LocationCodeContentType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The spatial coverage (country or region) of the framework or system used to describe qualifications."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "EscoSkillAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an alignment to an existing ESCO Skill."
+         },
+         "sequence": null,
+         "attribute": [
+            {
+               "@name": "type",
+               "@type": "SkillAlignmentTypeEnumType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A code indicating the semantics of the relation."
+               }
+            },
+            {
+               "@name": "description",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A string describing the semantics of the relation."
+               }
+            },
+            {
+               "@name": "targetID",
+               "@type": "xs:anyURI",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URI identifier of the related ESCO skill."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "EscoOccupationAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents a relation of an entitlement to an existing ESCO occupation."
+         },
+         "sequence": null,
+         "attribute": [
+            {
+               "@name": "description",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A string describing the semantics of the relation."
+               }
+            },
+            {
+               "@name": "targetID",
+               "@type": "xs:anyURI",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URI identifier of the related ESCO occupation."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "OccupationAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an association of an entitlement to an occupation from a (national) occupational framework."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "targetName",
+                  "@type": "LanguageStringType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A name or label of the associated occupation in the targeted framework."
+                  }
+               },
+               {
+                  "@name": "targetDescription",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A description of the associated occupation in the targeted framework"
+                  }
+               }
+            ]
+         },
+         "attribute": [
+            {
+               "@name": "description",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A string describing the semantics of the relation."
+               }
+            },
+            {
+               "@name": "targetNotation",
+               "@type": "xs:token",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A notation or code of the associated occupation in the targeted framework."
+               }
+            },
+            {
+               "@name": "targetFrameworkID",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The ID of the framework or system used to describe occupations."
+               }
+            },
+            {
+               "@name": "targetFrameworkName",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The name of the framework or system used to describe occupations."
+               }
+            },
+            {
+               "@name": "targetFrameworkUrl",
+               "@type": "DocumentURLType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URL of the framework or system used to describe occupations."
+               }
+            },
+            {
+               "@name": "targetFrameworkSpatialID",
+               "@type": "LocationCodeContentType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The spatial coverage (country or region) of the framework or system used to describe occupations."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "EducationLevelAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an association of a learning specification to an education level according a certain framework or system describing education levels."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "targetName",
+                  "@type": "LanguageStringType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A name or label of the associated edcuation level in the targeted framework."
+                  }
+               },
+               {
+                  "@name": "targetDescription",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A description of the associated edcuation level in the targeted framework."
+                  }
+               }
+            ]
+         },
+         "attribute": [
+            {
+               "@name": "targetNotation",
+               "@type": "xs:token",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A notation or code of the associated edcuation level in the targeted framework."
+               }
+            },
+            {
+               "@name": "targetFrameworkID",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The ID of the framework or system used to education levels."
+               }
+            },
+            {
+               "@name": "targetFrameworkName",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The name of the framework or system used to education levels."
+               }
+            },
+            {
+               "@name": "targetFrameworkUrl",
+               "@type": "DocumentURLType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URL of the framework or system used to education levels."
+               }
+            },
+            {
+               "@name": "targetFrameworkSpatialID",
+               "@type": "LocationCodeContentType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The spatial coverage (country or region) of the framework or system used to describe education levels."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "QFLevelAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an association of a qualification to a qualification framework level in a given qualification framework."
+         },
+         "sequence": null,
+         "attribute": [
+            {
+               "@name": "targetNotation",
+               "@type": "xs:token",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A notation or code of the qualification framework level within the national framework."
+               }
+            },
+            {
+               "@name": "targetFrameworkID",
+               "@type": "QualificationFrameworkEnumType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The ID (URI) of the national qualification framework."
+               }
+            }
+         ]
+      },
+      {
+         "@name": "EducationSubjectAssociationSimpleType",
+         "annotation": {
+            "documentation": "Represents an association of a learning specification to a field or subject of education according a certain framework or system describing fields of education."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "targetName",
+                  "@type": "LanguageStringType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A name or label of the associated field of education in the targeted framework."
+                  }
+               },
+               {
+                  "@name": "targetDescription",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A description of the associated field of education in the targeted framework."
+                  }
+               }
+            ]
+         },
+         "attribute": [
+            {
+               "@name": "targetNotation",
+               "@type": "xs:token",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A notation or code of the associated field of education in the targeted framework."
+               }
+            },
+            {
+               "@name": "targetFrameworkID",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The ID of the framework or system used to describe fields of education."
+               }
+            },
+            {
+               "@name": "targetFrameworkName",
+               "@type": "xs:normalizedString",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The name of the framework or system used to describe fields of education."
+               }
+            },
+            {
+               "@name": "targetFrameworkUrl",
+               "@type": "DocumentURLType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The URL of the framework or system used to describe fields of education."
+               }
+            },
+            {
+               "@name": "targetFrameworkSpatialID",
+               "@type": "LocationCodeContentType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "The spatial coverage (country or region) of the framework or system used to describe fields of education."
+               }
+            }
+         ]
+      }
+   ]
+}
+

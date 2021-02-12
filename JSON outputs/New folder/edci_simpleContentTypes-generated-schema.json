@@ -1,0 +1,326 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "#$id": "http://data.europa.eu/europass/model/edci_simpleContentTypes-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.4.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"},
+        "simpleType": {"$ref": "#/definitions/simpleType_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "object",
+            "properties": {
+                "@schemaLocation": {
+                    "type": "string",
+                    "examples": ["edci_individuals.xsd"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A link or reference to another entity record in the credential document."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["The URI identifier of a known code that indicates/specifies the currency in which the amount is indicated/expressed."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "attribute_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["unit"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["CurrencyEnumType"],
+                    "default": ""
+                },
+                "@use": {
+                    "type": "string",
+                    "examples": ["required"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation2_type"}
+            },
+            "additionalProperties": false
+        },
+        "extension_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:decimal"],
+                    "default": ""
+                },
+                "attribute": {"$ref": "#/definitions/attribute_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation3_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["The URI identifier of a known code that indicates/specifies the type of learning or assessment"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "attribute2_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["uri"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["VerificationStatusEnumType"],
+                    "default": ""
+                },
+                "@use": {
+                    "type": "string",
+                    "examples": ["required"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation3_type"}
+            },
+            "additionalProperties": false
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["URIBasedCodeType"],
+                    "default": ""
+                },
+                "attribute": {"$ref": "#/definitions/attribute2_type"}
+            },
+            "additionalProperties": false
+        },
+        "simpleContent_type": {
+            "type": "object",
+            "properties": {
+                "extension": {"$ref": "#/definitions/extension_type"},
+                "restriction": {"$ref": "#/definitions/restriction_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation4_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A subject or topic that is described in the text."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["text"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["TextType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation4_type"},
+                    "@minItems": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "@maxItems": {
+                        "type": "string",
+                        "examples": ["unbounded"],
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "annotation",
+                    "@name",
+                    "@type"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation5_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["The id of the referenced entity (record)."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "attribute3_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["idref"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["xs:anyURI"],
+                    "default": ""
+                },
+                "@use": {
+                    "type": "string",
+                    "examples": ["required"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation5_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["LanguageStringType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation_type"},
+                    "simpleContent": {"$ref": "#/definitions/simpleContent_type"},
+                    "sequence": {"$ref": "#/definitions/sequence_type"},
+                    "attribute": {"$ref": "#/definitions/attribute3_type"}
+                },
+                "required": ["@name"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "documentation_type": {
+            "type": "object",
+            "properties": {
+                "@lang": {
+                    "type": "string",
+                    "examples": ["en"],
+                    "default": ""
+                },
+                "#text": {
+                    "type": "string",
+                    "examples": ["mailto: URI scheme conform to RFC 2368."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation6_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"$ref": "#/definitions/documentation_type"}
+            },
+            "additionalProperties": false
+        },
+        "pattern_type": {
+            "type": "object",
+            "properties": {
+                "@value": {
+                    "type": "string",
+                    "examples": ["mailto:.*"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "restriction2_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:anyURI"],
+                    "default": ""
+                },
+                "pattern": {"$ref": "#/definitions/pattern_type"}
+            },
+            "additionalProperties": false
+        },
+        "simpleType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["IdType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation6_type"},
+                    "restriction": {"$ref": "#/definitions/restriction2_type"}
+                },
+                "required": [
+                    "@name",
+                    "restriction"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        }
+    }
+}

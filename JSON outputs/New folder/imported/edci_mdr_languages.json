@@ -1,0 +1,95 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "MDRLanguageCodeEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/BUL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/CES"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/DAN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/DEU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/ELL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/ENG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/SPA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/EST"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/FIN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/FRA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/GLE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/HRV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/HUN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/ISL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/ITA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/LIT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/LAV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/MLT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/NLD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/NOR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/POL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/POR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/RON"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/SLK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/SLV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/language/SWE"
+            }
+         ]
+      }
+   }
+}
+

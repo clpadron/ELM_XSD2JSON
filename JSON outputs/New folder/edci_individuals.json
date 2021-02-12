@@ -1,0 +1,658 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.4.0",
+   "include": [
+      {
+         "@schemaLocation": "imported/edci_mdr_countries.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_mdr_languages.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_esco_nuts2016.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_mdr_currency.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_mdr_humansex.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_esco_iscedf2013.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_esco_eqf.xsd"
+      },
+      {
+         "@schemaLocation": "imported/edci_esco_individuals.xsd"
+      }
+   ],
+   "simpleType": [
+      {
+         "@name": "CredentialTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/credentialType/learning"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/credentialType/qualification"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/credentialType/diplomaSupplement"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/credentialType/activity"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/credentialType/entitlement"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "ActivityTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/educationalProgram"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/workShop"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/internship"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/apprenticeship"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/selfmotivatedstudy"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/volunteering"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/jobexperience"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/classroom"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/lab"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/elearning"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningActivityType/research"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "LearningOpportunityTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/learningOpportunityType/educationalProgram"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningOpportunityType/programModule"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningOpportunityType/course"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningOpportunityType/class"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningOpportunityType/thesis"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "LearningModeTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/modeOfLearningAndAssessment/online"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/modeOfLearningAndAssessment/presential"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/modeOfLearningAndAssessment/workbased"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/modeOfLearningAndAssessment/blended"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "LearningScheduleTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/learningScheduleType/fullTime"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningScheduleType/partTimeIntensive"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningScheduleType/partTimeLight"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "LearningSettingTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/learningSettingType/formal"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/learningSettingType/nonFormal"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "TargetGroupCodeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": {
+               "@value": "http://data.europa.eu/europass/targetGroup/adults"
+            }
+         }
+      },
+      {
+         "@name": "AssessmentTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/assessmentType/writtenExamen"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/assessmentType/oralExamen"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/assessmentType/markedAssignment"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/assessmentType/continuousEvaluation"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "IDVerificationMethodEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/methodOfSupervisionAndVerification/idVerification"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/methodOfSupervisionAndVerification/noIDVerification"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/methodOfSupervisionAndVerification/supervisedWithIDVerification"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/methodOfSupervisionAndVerification/unsupervisedWithIDVerification"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "AccreditationTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/accreditationType/institutionalQualityAssurance"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/accreditationType/institutionalLicense"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/accreditationType/programQualityAssurance"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/accreditationType/programLicense"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "EntitlementTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/entitlementType/membership"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/entitlementType/occupation"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/entitlementType/learningOpportunity"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "EntitlementStatusEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/entitlementStatus/prospective"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/entitlementStatus/actual"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "CommunicationChannelEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/phone"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/mobilephone"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/email"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/fax"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/web"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelType/post"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "CommunicationChannelUseEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelUsage/personal"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelUsage/business"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/communicationChannelUsage/mobile"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "MediaTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/png"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/jpeg"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/gif"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/application/pdf"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "ImageMediaTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "MediaTypeEnumType",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/png"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/jpeg"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/mediaType/image/gif"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "ContentEncodingEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": {
+               "@value": "http://data.europa.eu/europass/mediaContentEncoding/base64"
+            }
+         }
+      },
+      {
+         "@name": "CreditPointSystemType",
+         "union": {
+            "@memberTypes": "CreditPointSystemEnumType"
+         }
+      },
+      {
+         "@name": "CreditPointSystemEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:normalizedString",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/educationalCreditPointSystem/ects"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/educationalCreditPointSystem/ecvet"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "ECTSCreditPointSystemEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "CreditPointSystemEnumType",
+            "enumeration": {
+               "@value": "http://data.europa.eu/europass/educationalCreditPointSystem/ects"
+            }
+         }
+      },
+      {
+         "@name": "SkillAlignmentTypeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/skillAssociationType/closeMatch"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/skillAssociationType/exactMatch"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/skillAssociationType/broaderMatch"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/skillAssociationType/narrowerMatch"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "VerificationCheckCodeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/verificationType/format"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/verificationType/seal"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/verificationType/owner"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/verificationType/revocation"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "VerificationStatusEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:anyURI",
+            "enumeration": [
+               {
+                  "@value": "http://data.europa.eu/europass/verificationStatus/green"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/verificationStatus/red"
+               },
+               {
+                  "@value": "http://data.europa.eu/europass/verificationStatus/gray"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "CurrencyEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "union": {
+            "@memberTypes": "MDRCurrencyEnumType"
+         }
+      },
+      {
+         "@name": "GenderEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "union": {
+            "@memberTypes": "MDRHumanSexEnumType"
+         }
+      },
+      {
+         "@name": "LocationCodeContentType",
+         "union": {
+            "@memberTypes": "MDRCountryCodeEnumType NutsCodeEnumType"
+         }
+      },
+      {
+         "@name": "CountryCodeContentType",
+         "union": {
+            "@memberTypes": "MDRCountryCodeEnumType"
+         }
+      },
+      {
+         "@name": "TextContentTypeCodeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:token",
+            "enumeration": [
+               {
+                  "@value": "text/html"
+               },
+               {
+                  "@value": "text/plain"
+               }
+            ]
+         }
+      },
+      {
+         "@name": "LanguageEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "union": {
+            "@memberTypes": "MDRLanguageCodeEnumType"
+         }
+      },
+      {
+         "@name": "LanguageCharCodeEnumType",
+         "annotation": {
+            "documentation": null
+         },
+         "restriction": {
+            "@base": "xs:language",
+            "enumeration": [
+               {
+                  "@value": "bg"
+               },
+               {
+                  "@value": "cs"
+               },
+               {
+                  "@value": "da"
+               },
+               {
+                  "@value": "de"
+               },
+               {
+                  "@value": "el"
+               },
+               {
+                  "@value": "en"
+               },
+               {
+                  "@value": "es"
+               },
+               {
+                  "@value": "et"
+               },
+               {
+                  "@value": "fi"
+               },
+               {
+                  "@value": "fr"
+               },
+               {
+                  "@value": "ga"
+               },
+               {
+                  "@value": "hr"
+               },
+               {
+                  "@value": "hu"
+               },
+               {
+                  "@value": "is"
+               },
+               {
+                  "@value": "it"
+               },
+               {
+                  "@value": "lt"
+               },
+               {
+                  "@value": "lv"
+               },
+               {
+                  "@value": "mt"
+               },
+               {
+                  "@value": "nl"
+               },
+               {
+                  "@value": "no"
+               },
+               {
+                  "@value": "pl"
+               },
+               {
+                  "@value": "pt"
+               },
+               {
+                  "@value": "ro"
+               },
+               {
+                  "@value": "sk"
+               },
+               {
+                  "@value": "sl"
+               },
+               {
+                  "@value": "sv"
+               }
+            ]
+         }
+      }
+   ]
+}
+

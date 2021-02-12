@@ -1,0 +1,148 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.3.0",
+   "include": {
+      "@schemaLocation": "edci_simpleContentTypes.xsd"
+   },
+   "element": {
+      "@name": "verifiablePresentation",
+      "@type": "VerifiablePresentationType",
+      "annotation": {
+         "documentation": "A verifiable presentation of a set of europass credentials."
+      }
+   },
+   "complexType": [
+      {
+         "@name": "VerifiablePresentationType",
+         "annotation": {
+            "documentation": "A verifiable presentation of a set of credentials."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "verifiableCredentials",
+                  "@type": "VerifiableCredentialsType",
+                  "annotation": {
+                     "documentation": "Container element that records all the verifiable credentials that are presented in this presentation."
+                  }
+               },
+               {
+                  "@name": "verification",
+                  "@type": "VerificationType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               },
+               {
+                  "@name": "proof"
+               }
+            ]
+         },
+         "attribute": [
+            {
+               "@name": "id",
+               "@type": "IdType",
+               "@use": "optional",
+               "annotation": {
+                  "documentation": "A portable identifier of the presentation (i.e. a urn in the uuid namespace, urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6)"
+               }
+            },
+            {
+               "@name": "xsdVersion",
+               "@use": "optional",
+               "@default": "0.3.0",
+               "annotation": {
+                  "documentation": "used xsd version"
+               },
+               "simpleType": {
+                  "restriction": {
+                     "@base": "xs:token",
+                     "enumeration": {
+                        "@value": "0.3.0"
+                     }
+                  }
+               }
+            }
+         ]
+      },
+      {
+         "@name": "VerifiableCredentialsType",
+         "annotation": {
+            "documentation": "Container element that records all the verifiable credentials that are presented in this presentation."
+         },
+         "sequence": {
+            "element": {
+               "@name": "verifiableCredential",
+               "@type": "VerifiableCredentialDefinedAsEncodedStringType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "An original credential document encoded using Base64. The actual (encoded) binary data (the actual bytes) of the xml document."
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerifiableCredentialDefinedAsEncodedStringType",
+         "annotation": {
+            "documentation": "An original credential document encoded using Base64. The actual (encoded) binary data (the actual bytes) of the xml document. The original credential xml document can be extracted and validated against its own xsd schema."
+         },
+         "simpleContent": {
+            "extension": {
+               "@base": "xs:base64Binary",
+               "attribute": {
+                  "@name": "id",
+                  "@type": "xs:ID",
+                  "@use": "required",
+                  "annotation": {
+                     "documentation": "Random and unique id within the scope of this document. Can be used to link to this verifiableCredential record from other places in the presentation document"
+                  }
+               }
+            }
+         }
+      },
+      {
+         "@name": "VerificationType",
+         "sequence": {
+            "element": {
+               "@name": "verififcationCheck",
+               "@type": "VerificationCheckType",
+               "@minItems": "0",
+               "@maxItems": "unbounded"
+            }
+         },
+         "attribute": {
+            "@name": "subject",
+            "@type": "xs:IDREF",
+            "@use": "required",
+            "annotation": {
+               "documentation": "ID reference to a verifiableCredential record in this document"
+            }
+         }
+      },
+      {
+         "@name": "VerificationCheckType",
+         "sequence": {
+            "element": [
+               {
+                  "@name": "type",
+                  "@type": "VerificationCheckCodeType"
+               },
+               {
+                  "@name": "status",
+                  "@type": "VerificationStatusCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "1"
+               },
+               {
+                  "@name": "description",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               }
+            ]
+         }
+      }
+   ]
+}
+

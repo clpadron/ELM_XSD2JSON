@@ -1,0 +1,300 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+     "$id": "http://data.europa.eu/europass/model/edci_presentation_alt1-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.3.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "element": {"$ref": "#/definitions/element_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "object",
+            "properties": {
+                "@schemaLocation": {
+                    "type": "string",
+                    "examples": ["edci_credential.xsd"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A verifiable presentation of a set of europass credentials."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "selector_type": {
+            "type": "object",
+            "properties": {
+                "@xpath": {
+                    "type": "string",
+                    "examples": ["eup:verifiableCredentials/eup:verifiableCredential/eup:europassCredential"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "field_type": {
+            "type": "object",
+            "properties": {
+                "@xpath": {
+                    "type": "string",
+                    "examples": ["@id"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "key_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["credentialKey"],
+                    "default": ""
+                },
+                "selector": {"$ref": "#/definitions/selector_type"},
+                "field": {"$ref": "#/definitions/field_type"}
+            },
+            "additionalProperties": false
+        },
+        "selector2_type": {
+            "type": "object",
+            "properties": {
+                "@xpath": {
+                    "type": "string",
+                    "examples": ["eup:verification/eup:subject"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "field2_type": {
+            "type": "object",
+            "properties": {
+                "@xpath": {
+                    "type": "string",
+                    "examples": ["@idref"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "keyref_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["credentialKeyReference"],
+                    "default": ""
+                },
+                "@refer": {
+                    "type": "string",
+                    "examples": ["credentialKey"],
+                    "default": ""
+                },
+                "selector": {"$ref": "#/definitions/selector2_type"},
+                "field": {"$ref": "#/definitions/field2_type"}
+            },
+            "additionalProperties": false
+        },
+        "element_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["verifiablePresentation"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["VerifiablePresentationType"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation_type"},
+                "key": {"$ref": "#/definitions/key_type"},
+                "keyref": {"$ref": "#/definitions/keyref_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["Element that contains a europass credential."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["type"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["VerificationCheckCodeType"],
+                        "default": ""
+                    },
+                    "@minOccurs": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "@maxOccurs": {
+                        "type": "string",
+                        "examples": ["1"],
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "@name",
+                    "@type"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element2_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation3_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["used xsd version"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "enumeration_type": {
+            "type": "object",
+            "properties": {
+                "@value": {
+                    "type": "string",
+                    "examples": ["0.3.0"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:token"],
+                    "default": ""
+                },
+                "enumeration": {"$ref": "#/definitions/enumeration_type"}
+            },
+            "additionalProperties": false
+        },
+        "simpleType_type": {
+            "type": "object",
+            "properties": {
+                "restriction": {"$ref": "#/definitions/restriction_type"}
+            },
+            "additionalProperties": false
+        },
+        "attribute_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["id"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["IdType"],
+                        "default": ""
+                    },
+                    "@use": {
+                        "type": "string",
+                        "examples": ["optional"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation3_type"},
+                    "@default": {
+                        "type": "string",
+                        "examples": ["0.3.0"],
+                        "default": ""
+                    },
+                    "simpleType": {"$ref": "#/definitions/simpleType_type"}
+                },
+                "required": [
+                    "annotation",
+                    "@name",
+                    "@use"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "complexType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["VerifiablePresentationType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation2_type"},
+                    "sequence": {"$ref": "#/definitions/sequence_type"},
+                    "attribute": {"$ref": "#/definitions/attribute_type"}
+                },
+                "required": [
+                    "sequence",
+                    "@name"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        }
+    }
+}

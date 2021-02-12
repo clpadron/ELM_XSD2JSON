@@ -1,0 +1,112 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+     "$id": "http://data.europa.eu/europass/model/edci_individuals-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.4.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "simpleType": {"$ref": "#/definitions/simpleType_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@schemaLocation": {
+                        "type": "string",
+                        "examples": ["imported/edci_mdr_countries.xsd"],
+                        "default": ""
+                    }
+                },
+                "required": ["@schemaLocation"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"type": "null"}
+            },
+            "additionalProperties": false
+        },
+        "enumeration_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@value": {
+                        "type": "string",
+                        "examples": ["bg"],
+                        "default": ""
+                    }
+                },
+                "required": ["@value"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:language"],
+                    "default": ""
+                },
+                "enumeration": {"$ref": "#/definitions/enumeration_type"}
+            },
+            "additionalProperties": false
+        },
+        "union_type": {
+            "type": "object",
+            "properties": {
+                "@memberTypes": {
+                    "type": "string",
+                    "examples": ["MDRLanguageCodeEnumType"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "simpleType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["CredentialTypeEnumType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation_type"},
+                    "restriction": {"$ref": "#/definitions/restriction_type"},
+                    "union": {"$ref": "#/definitions/union_type"}
+                },
+                "required": ["@name"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        }
+    }
+}

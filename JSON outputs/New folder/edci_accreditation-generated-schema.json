@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+    "#$id": "http://data.europa.eu/europass/model/edci_accreditation-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {"type": "string"},
+        "@elementFormDefault": {"type": "string"},
+        "@version": {"type": "string"},
+        "@minVersion": {"type": "string"},
+        "include": {"$ref": "#/definitions/include_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"}
+    },
+    "definitions": {
+        "include_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@schemaLocation": {"type": "string"}
+                },
+                "required": ["@schemaLocation"]
+            }
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"type": "string"}
+            }
+        },
+        "element_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"},
+                    "@minOccurs": {"type": "string"},
+                    "@maxOccurs": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation_type"}
+                },
+                "required": [
+                    "@name",
+                    "@type"
+                ]
+            }
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"}
+            }
+        },
+        "attribute_type": {
+            "type": "object",
+            "properties": {
+                "@name": {"type": "string"},
+                "@type": {"type": "string"},
+                "@use": {"type": "string"},
+                "annotation": {"$ref": "#/definitions/annotation_type"}
+            }
+        },
+        "complexType_type": {
+            "type": "object",
+            "properties": {
+                "@name": {"type": "string"},
+                "annotation": {"$ref": "#/definitions/annotation_type"},
+                "sequence": {"$ref": "#/definitions/sequence_type"},
+                "attribute": {"$ref": "#/definitions/attribute_type"}
+            }
+        }
+    }
+}

@@ -1,0 +1,310 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "$id": "http://data.europa.eu/europass/model/edci_learningOpportunity-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.4.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"},
+        "group": {"$ref": "#/definitions/group2_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@schemaLocation": {
+                        "type": "string",
+                        "examples": ["edci_simpleContentTypes.xsd"],
+                        "default": ""
+                    }
+                },
+                "required": ["@schemaLocation"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["The details about a price or price category."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["An additional free text note containing any further information about the price (e.g. conditions, reductions, \u2026.)."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["amount"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["AmountType"],
+                        "default": ""
+                    },
+                    "@minItems": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation2_type"},
+                    "@maxItems": {
+                        "type": "string",
+                        "examples": ["unbounded"],
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "@minItems",
+                    "annotation",
+                    "@name",
+                    "@type"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "group_type": {
+            "type": "object",
+            "properties": {
+                "@ref": {
+                    "type": "string",
+                    "examples": ["CommonSpecificationElements"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"},
+                "group": {"$ref": "#/definitions/group_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation3_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A portable identifier of the entitlement specification. (i.e. a urn in the uuid namespace). It is this identifier that MUST be used to link or refer to this entitlement specification from other places within the credential document."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "attribute_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["id"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["IdType"],
+                    "default": ""
+                },
+                "@use": {
+                    "type": "string",
+                    "examples": ["required"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation3_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["LearningOpportunityType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation_type"},
+                    "sequence": {"$ref": "#/definitions/sequence_type"},
+                    "attribute": {"$ref": "#/definitions/attribute_type"}
+                },
+                "required": [
+                    "annotation",
+                    "sequence",
+                    "@name"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "annotation4_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A specification of an entitlement to which this LearningSpecification may give rise to. A specification of a right this LearningSpecification may give access to. It MUST refer to an existing record in the 'entitlementSpecificationReferences-section of this credential."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation5_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["Refers to an activity related to the awarding of the learning specification, such as the country or region where the Learning Specification is or was awarded, the awarding body and optionally the awarding period now or in the past."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element2_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["awardingOpportunity"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["AwardingOpportunityType"],
+                    "default": ""
+                },
+                "@minItems": {
+                    "type": "string",
+                    "examples": ["0"],
+                    "default": ""
+                },
+                "@maxItems": {
+                    "type": "string",
+                    "examples": ["unbounded"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation5_type"}
+            },
+            "additionalProperties": false
+        },
+        "sequence2_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element2_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexType2_type": {
+            "type": "object",
+            "properties": {
+                "sequence": {"$ref": "#/definitions/sequence2_type"}
+            },
+            "additionalProperties": false
+        },
+        "element3_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["identifier"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["IdentifierType"],
+                        "default": ""
+                    },
+                    "@minItems": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "@maxItems": {
+                        "type": "string",
+                        "examples": ["unbounded"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation4_type"},
+                    "complexType": {"$ref": "#/definitions/complexType2_type"}
+                },
+                "required": [
+                    "@minItems",
+                    "@name"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "sequence3_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element3_type"}
+            },
+            "additionalProperties": false
+        },
+        "group2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["CommonSpecificationElements"],
+                        "default": ""
+                    },
+                    "sequence": {"$ref": "#/definitions/sequence3_type"}
+                },
+                "required": [
+                    "sequence",
+                    "@name"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        }
+    }
+}

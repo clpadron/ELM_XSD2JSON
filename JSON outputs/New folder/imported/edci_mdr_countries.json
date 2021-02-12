@@ -1,0 +1,869 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "MDRCountryCodeEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/1A0"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ABW"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AFG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AFI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AGO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AIA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ALA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ALB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AND"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ANT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ARE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ARG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ARM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ASM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ATA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ATB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ATF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ATG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ATN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AUS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AUT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/AZE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BDI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BEL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BEN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BES"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BFA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BGD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BGR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BHR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BHS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BIH"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BLM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BLR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BLZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BMU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BOL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BRA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BRB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BRN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BTN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BUR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BVT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BWA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/BYS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CAF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CAN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CCK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CHE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CHL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CHN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CIV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CMR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/COD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/COG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/COK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/COL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/COM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CPT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CPV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CRI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CSK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CTE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CUB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CUW"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CXR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CYM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CYP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/CZE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DDR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DEU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DHY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DJI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DMA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DNK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DOM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/DZA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ECU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/EGY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ERI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ESH"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ESP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/EST"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ETH"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/EUR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FIN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FJI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FLK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FQ0"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FRA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FRO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FSM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/FXX"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GAB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GBR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GEL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GEO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GGY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GHA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GIB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GIN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GLP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GMB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GNB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GNQ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GRC"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GRD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GRL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GTM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GUF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GUM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/GUY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HKG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HMD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HND"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HRV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HTI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HUN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/HVO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IDN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IMN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IND"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IOT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IRL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IRN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/IRQ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ISL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ISR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ITA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/JAM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/JEY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/JOR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/JPN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/JTN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KAZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KEN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KGZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KHM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KIR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KNA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KOR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/KWT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LAO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LBN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LBR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LBY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LCA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LIE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LKA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LSO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LTU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LUX"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/LVA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MAC"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MAF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MAR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MCO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MDA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MDG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MDV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MEX"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MHL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MID"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MKD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MLI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MLT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MMR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MNE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MNG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MNP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MOZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MRT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MSR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MTQ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MUS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MWI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MYS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/MYT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NAM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NCL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NER"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NFK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NGA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NHB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NIC"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NIU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NLD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NOR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NPL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NRU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NTZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/NZL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/OMN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/OP_DATPRO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PAK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PAN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PCI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PCN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PCZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PER"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PHL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PLW"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PNG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/POL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PRI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PRK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PRT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PRY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PSE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PUS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/PYF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/QAT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/REU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/RHO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ROU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/RUS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/RWA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SAU"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SCG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SDN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SEN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SGP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SGS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SHN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SJM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SKM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SLB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SLE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SLV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SMR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SOM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SPM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SRB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SSD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/STP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SUN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SUR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SVK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SVN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SWE"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SWZ"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SXM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SYC"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/SYR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TCA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TCD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TGO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/THA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TJK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TKL"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TKM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TLS"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TMP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TON"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TTO"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TUN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TUR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TUV"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TWN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/TZA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/UGA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/UKR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/UMI"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/URY"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/USA"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/UZB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VAT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VCT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VDR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VEN"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VGB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VIR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VNM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/VUT"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/WAK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/WLF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/WSM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/YEM"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/YMD"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/YUG"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ZAF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ZMB"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ZR0"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/country/ZWE"
+            }
+         ]
+      }
+   }
+}
+

@@ -1,0 +1,122 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+     "$id": "http://data.europa.eu/europass/model/edci_contact-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.4.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@schemaLocation": {
+                        "type": "string",
+                        "examples": ["edci_simpleContentTypes.xsd"],
+                        "default": ""
+                    }
+                },
+                "required": ["@schemaLocation"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"type": "null"}
+            },
+            "additionalProperties": false
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["The address of an electronic wallet where credentials may be deposited."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["note"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["NoteType"],
+                        "default": ""
+                    },
+                    "@minItems": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "@maxItems": {
+                        "type": "string",
+                        "examples": ["unbounded"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation2_type"}
+                },
+                "required": [
+                    "@minItems",
+                    "annotation",
+                    "@name",
+                    "@maxItems",
+                    "@type"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexType_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["ContactPointType"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation_type"},
+                "sequence": {"$ref": "#/definitions/sequence_type"}
+            },
+            "additionalProperties": false
+        }
+    }
+}

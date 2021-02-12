@@ -1,0 +1,273 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "$id": "http://data.europa.eu/europass/model/edci_presentation-generated-schema.json", 
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {
+            "type": "string",
+            "format": "uri",
+            "examples": ["http://data.europa.eu/europass/model/credentials#"],
+            "default": ""
+        },
+        "@elementFormDefault": {
+            "type": "string",
+            "examples": ["qualified"],
+            "default": ""
+        },
+        "@version": {
+            "type": "string",
+            "examples": ["0.4.0"],
+            "default": ""
+        },
+        "include": {"$ref": "#/definitions/include_type"},
+        "element": {"$ref": "#/definitions/element_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"}
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "include_type": {
+            "type": "object",
+            "properties": {
+                "@schemaLocation": {
+                    "type": "string",
+                    "examples": ["edci_simpleContentTypes.xsd"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["A verifiable presentation of a set of credentials."],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["verifiablePresentation"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["VerifiablePresentationType"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["Can contain any wellformed xml structure. Any wellformed xml content model can be included. It will not be validated by this schema. The xml header of the original credential xml document must be encoded (i.e. <?xml version=\"1.0\" encoding=\"UTF-8\"?>)"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "element2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["type"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["VerificationCheckCodeType"],
+                        "default": ""
+                    },
+                    "@minItems": {
+                        "type": "string",
+                        "examples": ["0"],
+                        "default": ""
+                    },
+                    "@maxItems": {
+                        "type": "string",
+                        "examples": ["1"],
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "@name",
+                    "@type"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element2_type"}
+            },
+            "additionalProperties": false
+        },
+        "annotation3_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["used xsd version"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "enumeration_type": {
+            "type": "object",
+            "properties": {
+                "@value": {
+                    "type": "string",
+                    "examples": ["0.3.0"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:token"],
+                    "default": ""
+                },
+                "enumeration": {"$ref": "#/definitions/enumeration_type"}
+            },
+            "additionalProperties": false
+        },
+        "simpleType_type": {
+            "type": "object",
+            "properties": {
+                "restriction": {"$ref": "#/definitions/restriction_type"}
+            },
+            "additionalProperties": false
+        },
+        "attribute_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["id"],
+                        "default": ""
+                    },
+                    "@type": {
+                        "type": "string",
+                        "examples": ["IdType"],
+                        "default": ""
+                    },
+                    "@use": {
+                        "type": "string",
+                        "examples": ["optional"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation3_type"},
+                    "@default": {
+                        "type": "string",
+                        "examples": ["0.3.0"],
+                        "default": ""
+                    },
+                    "simpleType": {"$ref": "#/definitions/simpleType_type"}
+                },
+                "required": [
+                    "annotation",
+                    "@name",
+                    "@use"
+                ],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        },
+        "annotation4_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {
+                    "type": "string",
+                    "examples": ["Random and unique id within the scope of this document. Can be used to link to this verifiableCredential record from other places in the presentation document"],
+                    "default": ""
+                }
+            },
+            "additionalProperties": false
+        },
+        "attribute2_type": {
+            "type": "object",
+            "properties": {
+                "@name": {
+                    "type": "string",
+                    "examples": ["id"],
+                    "default": ""
+                },
+                "@type": {
+                    "type": "string",
+                    "examples": ["xs:ID"],
+                    "default": ""
+                },
+                "@use": {
+                    "type": "string",
+                    "examples": ["required"],
+                    "default": ""
+                },
+                "annotation": {"$ref": "#/definitions/annotation4_type"}
+            },
+            "additionalProperties": false
+        },
+        "extension_type": {
+            "type": "object",
+            "properties": {
+                "@base": {
+                    "type": "string",
+                    "examples": ["xs:anyType"],
+                    "default": ""
+                },
+                "attribute": {"$ref": "#/definitions/attribute2_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexContent_type": {
+            "type": "object",
+            "properties": {
+                "extension": {"$ref": "#/definitions/extension_type"}
+            },
+            "additionalProperties": false
+        },
+        "complexType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {
+                        "type": "string",
+                        "examples": ["VerifiablePresentationType"],
+                        "default": ""
+                    },
+                    "annotation": {"$ref": "#/definitions/annotation2_type"},
+                    "sequence": {"$ref": "#/definitions/sequence_type"},
+                    "attribute": {"$ref": "#/definitions/attribute_type"},
+                    "complexContent": {"$ref": "#/definitions/complexContent_type"}
+                },
+                "required": ["@name"],
+                "additionalProperties": false
+            },
+            "additionalItems": false
+        }
+    }
+}

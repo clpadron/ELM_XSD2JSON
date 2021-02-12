@@ -1,0 +1,116 @@
+{
+    "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+    "@elementFormDefault": "qualified",
+    "@version": "0.2.0",
+    "simpleType": [
+        {
+            "@name": "QualificationFrameworkEnumType",
+            "annotation": {"documentation": null},
+            "restriction": {
+                "@base": "xs:anyURI",
+                "enumeration": [
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/AT"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/BE2"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/BE3"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/BE4"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/BG"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/CH"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/CY"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/CZ"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/DE"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/DK"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/EE"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/EL"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/ES"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/FI"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/FR"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/HR"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/HU"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/IE"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/IS"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/IT"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/LI"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/LT"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/LU"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/LV"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/ME"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/MK"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/MT"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/NL"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/NO"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/PL"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/PT"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/RO"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/SE"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/SK"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/SI"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/TR"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/UK"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/UKM"},
+                    {"@value": "http://data.europa.eu/esco/qdr/QF/UKL"},
+                    {"@value": "http://data.europa.eu/esco/concept-scheme/eqf"}
+                ]
+            }
+        },
+        {
+            "@name": "SubjectTypeCodeEnumType",
+            "annotation": {"documentation": null},
+            "restriction": {
+                "@base": "xs:anyURI",
+                "enumeration": [
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#accreditation-and-quality-assurance"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#assessment"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#awarding-activity"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#regulations-and-certificates"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#learning-outcomes"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#entry-requirements"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#labour-market-and-employment"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#contact-info"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#ways-to-acquire"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#history-and-lifecycle"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#labour-market-and-employment"},
+                    {"@value": "http://data.europa.eu/esco/qualification-topics#pathways"}
+                ]
+            }
+        },
+        {
+            "@name": "EscoOrganizationTypeEnumType",
+            "annotation": {"documentation": null},
+            "restriction": {
+                "@base": "xs:anyURI",
+                "enumeration": [
+                    {"@value": "http://data.europa.eu/esco/agent-type#academic-institution"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#company"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#government-agency"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#regional-authority"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#national-authority"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#international-authority"},
+                    {"@value": "http://data.europa.eu/esco/agent-type#education-training-provider"}
+                ]
+            }
+        },
+        {
+            "@name": "ReusabilityLevelEnumType",
+            "annotation": {"documentation": null},
+            "restriction": {
+                "@base": "xs:anyURI",
+                "enumeration": [
+                    {"@value": "http://data.europa.eu/esco/skill-reuse-level/occupation-specific"},
+                    {"@value": "http://data.europa.eu/esco/skill-reuse-level/sector-specific"},
+                    {"@value": "http://data.europa.eu/esco/skill-reuse-level/transversal"}
+                ]
+            }
+        },
+        {
+            "@name": "LearningOutcomeTypeEnumType",
+            "annotation": {"documentation": null},
+            "restriction": {
+                "@base": "xs:anyURI",
+                "enumeration": [
+                    {"@value": "http://data.europa.eu/esco/skill-type/knowledge"},
+                    {"@value": "http://data.europa.eu/esco/skill-type/skill"}
+                ]
+            }
+        }
+    ]
+}

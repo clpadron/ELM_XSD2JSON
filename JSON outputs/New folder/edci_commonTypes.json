@@ -1,0 +1,437 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.4.0",
+   "include": {
+      "@schemaLocation": "edci_simpleContentTypes.xsd"
+   },
+   "complexType": [
+      {
+         "@name": "ScoringSchemeType",
+         "annotation": {
+            "documentation": "A scoring scheme. A numeric or text type of scoring methodology or convention. A grading system."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "title",
+                  "@type": "LanguageStringType",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "description",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A free text describing the scoring methodology or convention. Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "supplementaryDoc",
+                  "@type": "DocumentType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A public web document containing additional documentation about the scoring/grading system. It can be any document containing further information about the scoring system. The document can be a web page that can be navigated or a downloadable file"
+                  }
+               }
+            ]
+         },
+         "attribute": {
+            "@name": "id",
+            "@type": "xs:normalizedString",
+            "@use": "required",
+            "annotation": {
+               "documentation": "A portable identifier of the grading system (i.e. a urn in the uuid namespace). It is this identifier that MUST be used to link or refer to this grading system from other places within the credential document."
+            }
+         }
+      },
+      {
+         "@name": "DocumentType",
+         "annotation": {
+            "documentation": "A public accessible web document."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "title",
+                  "@type": "LanguageStringType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "language",
+                  "@type": "LanguageCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "The language of the document."
+                  }
+               },
+               {
+                  "@name": "subject",
+                  "@type": "SubjectTypeCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A subject or topic that is described in the document."
+                  }
+               }
+            ]
+         },
+         "attribute": {
+            "@name": "uri",
+            "@type": "DocumentURLType",
+            "@use": "required",
+            "annotation": {
+               "documentation": "The URL of the web document. The URL to access or download the web document."
+            }
+         }
+      },
+      {
+         "@name": "LocationType",
+         "annotation": {
+            "documentation": "An identifiable geographic place. A physical location."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "identifier",
+                  "@type": "IdentifierType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded"
+               },
+               {
+                  "@name": "name",
+                  "@type": "LanguageStringType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A proper noun applied to a spatial object. The place name. A simple (string) label or name for a location. Only one value per language allowed."
+                  }
+               },
+               {
+                  "@name": "description",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A free text describing the location. Only one value per language allowed."
+                  }
+               },
+               {
+                  "@name": "hasAddress",
+                  "@type": "AddressType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "An address associated with the location."
+                  }
+               },
+               {
+                  "@name": "spatialCode",
+                  "@type": "LocationCodeType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "A code (i.e. location or region) identifying a spatial scope in which this physical location is located"
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "@name": "SpatialCodeLocationType",
+         "annotation": {
+            "documentation": "An identifiable geographic place. A physical location. Spatial code is mandatory."
+         },
+         "complexContent": {
+            "restriction": {
+               "@base": "LocationType",
+               "sequence": {
+                  "element": [
+                     {
+                        "@name": "identifier",
+                        "@type": "IdentifierType",
+                        "@minItems": "0",
+                        "@maxItems": "unbounded"
+                     },
+                     {
+                        "@name": "name",
+                        "@type": "LanguageStringType",
+                        "@minItems": "0",
+                        "@maxItems": "unbounded",
+                        "annotation": {
+                           "documentation": "A proper noun applied to a spatial object. The place name. A simple (string) label or name for a location. Only one value per language allowed."
+                        }
+                     },
+                     {
+                        "@name": "description",
+                        "@type": "NoteType",
+                        "@minItems": "0",
+                        "@maxItems": "unbounded",
+                        "annotation": {
+                           "documentation": "A free text describing the location. Only one value per language allowed."
+                        }
+                     },
+                     {
+                        "@name": "hasAddress",
+                        "@type": "AddressType",
+                        "@minItems": "0",
+                        "@maxItems": "unbounded",
+                        "annotation": {
+                           "documentation": "An address associated with the location."
+                        }
+                     },
+                     {
+                        "@name": "spatialCode",
+                        "@type": "LocationCodeType",
+                        "@maxItems": "unbounded",
+                        "annotation": {
+                           "documentation": "A code (i.e. location or region) identifying a spatial scope in which this physical location is located"
+                        }
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      {
+         "@name": "AddressType",
+         "annotation": {
+            "documentation": "An adress. Properties specifying an entity’s physical location."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "identifier",
+                  "@type": "IdentifierType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "An adress identifier."
+                  }
+               },
+               {
+                  "@name": "fullAddress",
+                  "@type": "NoteType",
+                  "@minItems": "0",
+                  "@maxItems": "unbounded",
+                  "annotation": {
+                     "documentation": "The complete address with or without formatting. Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. Maximum one value per language is allowed."
+                  }
+               },
+               {
+                  "@name": "country",
+                  "@type": "CountryCodeType",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The address country Code. The uppermost administrative unit for the address."
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "@name": "PhoneType",
+         "annotation": {
+            "documentation": "A phone number."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "phoneNumber",
+                  "@type": "xs:normalizedString",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The full phone number as a string."
+                  }
+               },
+               {
+                  "@name": "countryDialing",
+                  "@type": "xs:token",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The country dialling code for a contact number. (e.g. “0032”, “0034”, etc.)"
+                  }
+               },
+               {
+                  "@name": "areaDialing",
+                  "@type": "xs:token",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The area dialling code for a contact number.(e.g. “2”, “71, “93”, etc.)"
+                  }
+               },
+               {
+                  "@name": "dialNumber",
+                  "@type": "xs:token",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The contact number, not including country dialling or area dialling codes. (e.g. “3445654”, “1234567”, etc.)"
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "@name": "MBoxType",
+         "annotation": {
+            "documentation": "A mailbox (ie. an Internet mailbox)"
+         },
+         "sequence": null,
+         "attribute": {
+            "@name": "uri",
+            "@type": "MailToUriType",
+            "@use": "required",
+            "annotation": {
+               "documentation": "The email address. A uri that specifies the e-mail adress using the 'mailto'-URI scheme. The 'mailto'-URI scheme is used to identify resources that are reached using Internet mail. In its simplest form, a 'mailto' URI contains an Internet mail address. (see https://tools.ietf.org/html/rfc6068)"
+            }
+         }
+      },
+      {
+         "@name": "InteractiveWebResourceType",
+         "annotation": {
+            "documentation": "A web resource that can be used to communicate. A web resource requiring interaction from the user to be understood, executed, or experienced. (e.g. forms on a web page, a chat service,…"
+         },
+         "sequence": null,
+         "attribute": {
+            "@name": "uri",
+            "@type": "xs:anyURI",
+            "@use": "required",
+            "annotation": {
+               "documentation": "The URL to access the interactive web resource."
+            }
+         }
+      },
+      {
+         "@name": "MediaObjectType",
+         "annotation": {
+            "documentation": "A media object, such as a pdf, image, video, or audio object embedded in another resource or published on the web."
+         },
+         "sequence": {
+            "element": [
+               {
+                  "@name": "contentType",
+                  "@type": "MediaTypeType",
+                  "annotation": {
+                     "documentation": "The media-type, the format, of the media resource (e.g. application/pdf, image/png, image/jpeg, image/gif)."
+                  }
+               },
+               {
+                  "@name": "contentEncoding",
+                  "@type": "ContentEncodingType",
+                  "annotation": {
+                     "documentation": "The encoding used to encode the binary data contents of the media resource. MUST be Base64."
+                  }
+               },
+               {
+                  "@name": "contentSize",
+                  "@type": "xs:integer",
+                  "@minItems": "0",
+                  "annotation": {
+                     "documentation": "The Content-Length indicates the size of the content, in bytes"
+                  }
+               },
+               {
+                  "@name": "contentUrl",
+                  "@type": "xs:anyURI",
+                  "@minItems": "0"
+               },
+               {
+                  "@name": "content",
+                  "@type": "xs:base64Binary",
+                  "annotation": {
+                     "documentation": "The binary data encoded using Base64. The actual (encoded) binary data in the media type specified by the mediatype property. The actual bytes of the media resource (e.g the image file)."
+                  }
+               }
+            ]
+         },
+         "attribute": {
+            "@name": "id",
+            "@type": "IdType",
+            "@use": "optional",
+            "annotation": {
+               "documentation": "A portable identifier of the media object. It is this identifier that MUST be used to link or refer to this media object from other places within the credential document."
+            }
+         }
+      },
+      {
+         "@name": "ImageObjectType",
+         "annotation": {
+            "documentation": "A static visual representation. An image file as a media object embedded in another resource or published on the web."
+         },
+         "complexContent": {
+            "restriction": {
+               "@base": "MediaObjectType",
+               "sequence": {
+                  "element": [
+                     {
+                        "@name": "contentType",
+                        "@type": "ImageMediaTypeType",
+                        "annotation": {
+                           "documentation": "The media-type, the format, of the image resource (image/png, image/jpeg, image/gif)."
+                        }
+                     },
+                     {
+                        "@name": "contentEncoding",
+                        "@type": "ContentEncodingType",
+                        "annotation": {
+                           "documentation": "The encoding used to encode the binary data contents of the image type resource. MUST be Base64."
+                        }
+                     },
+                     {
+                        "@name": "contentSize",
+                        "@type": "xs:integer",
+                        "@minItems": "0",
+                        "annotation": {
+                           "documentation": "The Content-Length indicates the size of the content, in bytes"
+                        }
+                     },
+                     {
+                        "@name": "contentUrl",
+                        "@type": "xs:anyURI",
+                        "@minItems": "0"
+                     },
+                     {
+                        "@name": "content",
+                        "@type": "xs:base64Binary",
+                        "annotation": {
+                           "documentation": "The binary data encoded using Base64."
+                        }
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      {
+         "@name": "AttachmentListType",
+         "annotation": {
+            "documentation": {
+               "@lang": "en",
+               "#text": "List any digital document (PDF, JPEG or PNG format) that an issuer has attached to the Europass document to support/evidence of personal data, learning achievements, work experiences, skills, competences, diplomas, etc."
+            }
+         },
+         "sequence": {
+            "element": {
+               "@name": "Attachment",
+               "@type": "MediaObjectType",
+               "@minItems": "0",
+               "@maxItems": "unbounded",
+               "annotation": {
+                  "documentation": "The attached document. Any digital document (PDF, JPEG or PNG format) that an issuer has attached to the Europass document to support/evidence of personal data, learning achievements, workexperiences, skills, competences, diplomas, etc."
+               }
+            }
+         }
+      }
+   ]
+}
+

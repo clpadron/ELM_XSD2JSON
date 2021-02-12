@@ -1,0 +1,190 @@
+
+
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.4.0",
+   "@minVersion": "1.1",
+   "include": [
+      {
+         "@schemaLocation": "edci_simpleContentTypes.xsd"
+      },
+      {
+         "@schemaLocation": "edci_commonTypes.xsd"
+      }
+   ],
+   "complexType": {
+      "@name": "AccreditationType",
+      "annotation": {
+         "documentation": "The quality assurance or licensing of an organization or a qualification. An accreditation instance can be used to specify information about:\n- the quality assurance and/or licensing of an organization.\n- the quality assurance and/or licensing of an organization with respect to a specific qualification."
+      },
+      "sequence": {
+         "element": [
+            {
+               "@name": "identifier",
+               "@type": "IdentifierType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded"
+            },
+            {
+               "@name": "type",
+               "@type": "AccreditationTypeType",
+               "annotation": {
+                  "documentation": "The type of accreditation (i.e program quality assurance, institutional quality assurance, program license, institutional license)"
+               }
+            },
+            {
+               "@name": "title",
+               "@type": "LanguageStringType",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "The title of the accreditation. Maximum one value per language is allowed."
+               }
+            },
+            {
+               "@name": "description",
+               "@type": "NoteType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "A free text description of the accreditation. Maximum one value per language is allowed."
+               }
+            },
+            {
+               "@name": "decision",
+               "@type": "TextScoreType",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "The Quality Decision issued by the Quality Assuring Authority. A short description of the decision, such as \"substantially compliant; awarded; gold level, etc.\""
+               }
+            },
+            {
+               "@name": "report",
+               "@type": "DocumentType",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "A publicly accessible report of the quality assurance decision. This may be held by the awarded institution, by the quality assurance institution or by an independent registry such as DEQAR."
+               }
+            },
+            {
+               "@name": "organization",
+               "@type": "IdReferenceType",
+               "annotation": {
+                  "documentation": "The organization whose activities are being accredited. It MUST refer to an existing 'organization'-record in the 'agentReferences'-section."
+               }
+            },
+            {
+               "@name": "limitQualification",
+               "@type": "IdReferenceType",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "The qualification that was accredited. It MUST refer to an existing 'qualification'-record in the 'learningSpecificationReferences'-section."
+               }
+            },
+            {
+               "@name": "limitField",
+               "@type": "IscedFOetCodeType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "The field of education for which the accreditation is valid."
+               }
+            },
+            {
+               "@name": "limitEQFLevel",
+               "@type": "EQFLevelType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "The european qualification level for which the accreditation is valid."
+               }
+            },
+            {
+               "@name": "limitJurisdiction",
+               "@type": "LocationCodeType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "The jurisdiction for which the accreditation is valid."
+               }
+            },
+            {
+               "@name": "accreditingAgent",
+               "@type": "IdReferenceType",
+               "annotation": {
+                  "documentation": "The Quality Assuring Authority. The competent body which administered the quality assurance process and awarded the decision. It MUST refer to an existing 'organization'-record in the 'agentReferences'-section."
+               }
+            },
+            {
+               "@name": "issuedDate",
+               "@type": "xs:dateTime",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "The date when the accreditation was formally approved/issued. If not specified it is undefined (“not known”)"
+               }
+            },
+            {
+               "@name": "reviewDate",
+               "@type": "xs:dateTime",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "The date when the accreditation has to be re-viewed. If not specified it is undefined (“not known”)"
+               }
+            },
+            {
+               "@name": "expiryDate",
+               "@type": "xs:dateTime",
+               "@minOccurs": "0",
+               "annotation": {
+                  "documentation": "The date when the accreditation expires or was expired. If not specified it is undefined (“not known”)"
+               }
+            },
+            {
+               "@name": "additionalNote",
+               "@type": "NoteType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "An additional free text note containing any further information about the accreditation (e.g applied standards and procedures in the assess-ment and quality assurance of the qualification)."
+               }
+            },
+            {
+               "@name": "homepage",
+               "@type": "DocumentType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "The homepage (a public web document) of an accreditation."
+               }
+            },
+            {
+               "@name": "landingpage",
+               "@type": "DocumentType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "A web page that can be navigated to in a web browser to gain access to the accreditation and/or additional information about the accreditation. An accreditation might not have a personal homepage but instead a landing page."
+               }
+            },
+            {
+               "@name": "supplementaryDoc",
+               "@type": "DocumentType",
+               "@minOccurs": "0",
+               "@maxOccurs": "unbounded",
+               "annotation": {
+                  "documentation": "A public web document containing supplemen-tary documentation about the accreditation (e.g applied standards and procedures in the assess-ment and quality assurance of the qualification). This can be a web page that can be navigated to or a downloadable file."
+               }
+            }
+         ]
+      },
+      "attribute": {
+         "@name": "id",
+         "@type": "IdType",
+         "@use": "required",
+         "annotation": {
+            "documentation": "A portable identifier of the accreditation (i.e. a urn in the uuid namespace). It is this identifier that MUST be used to link or refer to this accreditation from other places within the credential document."
+         }
+      }
+   }
+}
+

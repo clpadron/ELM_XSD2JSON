@@ -1,0 +1,47 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "MDRCurrencyEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/EUR"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/GBP"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/ISK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/NOK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/SEK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/SKK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/CZK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/DKK"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/CHF"
+            },
+            {
+               "@value": "http://publications.europa.eu/resource/authority/currency/TRY"
+            }
+         ]
+      }
+   }
+}
+

@@ -1,0 +1,54 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+     "#$id": "http://data.europa.eu/europass/model/import/edci_esco_individuals--generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@targetNamespace": {"type": "string"},
+        "@elementFormDefault": {"type": "string"},
+        "@version": {"type": "string"},
+        "simpleType": {"$ref": "#/definitions/simpleType_type"}
+    },
+    "definitions": {
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"type": "null"}
+            }
+        },
+        "enumeration_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@value": {"type": "string"}
+                },
+                "required": ["@value"]
+            }
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {"type": "string"},
+                "enumeration": {"$ref": "#/definitions/enumeration_type"}
+            }
+        },
+        "simpleType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation_type"},
+                    "restriction": {"$ref": "#/definitions/restriction_type"}
+                },
+                "required": [
+                    "annotation",
+                    "@name",
+                    "restriction"
+                ]
+            }
+        }
+    }
+}

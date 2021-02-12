@@ -1,0 +1,41 @@
+{
+   "@targetNamespace": "http://data.europa.eu/europass/model/credentials#",
+   "@elementFormDefault": "qualified",
+   "@version": "0.2.0",
+   "simpleType": {
+      "@name": "EQFLevelEnumType",
+      "annotation": {
+         "documentation": null
+      },
+      "restriction": {
+         "@base": "xs:anyURI",
+         "enumeration": [
+            {
+               "@value": "http://data.europa.eu/esco/eqf/1"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/2"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/3"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/4"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/5"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/6"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/7"
+            },
+            {
+               "@value": "http://data.europa.eu/esco/eqf/8"
+            }
+         ]
+      }
+   }
+}
+

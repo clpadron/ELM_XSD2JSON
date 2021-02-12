@@ -1,0 +1,2245 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Documentation edci_individuals-generated-schema.json</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css"><script>var sourceBoxes= new Array('source_#/Schema', 
+				'source_#/properties/@targetNamespace', 
+				'source_#/properties/@elementFormDefault', 
+				'source_#/properties/@version', 
+				'source_#/properties/include', 
+				'source_#/properties/simpleType', 
+				'source_#/definitions/include_type', 
+				'source_#/definitions/include_type/items', 
+				'source_#/definitions/include_type/items/properties/@schemaLocation', 
+				'source_#/definitions/simpleType_type', 
+				'source_#/definitions/simpleType_type/items', 
+				'source_#/definitions/simpleType_type/items/properties/@name', 
+				'source_#/definitions/annotation_type', 
+				'source_#/definitions/annotation_type/properties/documentation', 
+				'source_#/definitions/simpleType_type/items/properties/annotation', 
+				'source_#/definitions/restriction_type', 
+				'source_#/definitions/restriction_type/properties/@base', 
+				'source_#/definitions/enumeration_type', 
+				'source_#/definitions/enumeration_type/items', 
+				'source_#/definitions/enumeration_type/items/properties/@value', 
+				'source_#/definitions/restriction_type/properties/enumeration', 
+				'source_#/definitions/simpleType_type/items/properties/restriction', 
+				'source_#/definitions/union_type', 
+				'source_#/definitions/union_type/properties/@memberTypes', 
+				'source_#/definitions/simpleType_type/items/properties/union');
+var propertiesBoxes= new Array('properties_#/Schema', 
+				'properties_#/definitions/include_type/items', 
+				'properties_#/definitions/simpleType_type/items', 
+				'properties_#/definitions/annotation_type', 
+				'properties_#/definitions/restriction_type', 
+				'properties_#/definitions/enumeration_type/items', 
+				'properties_#/definitions/union_type');
+var constraintsBoxes= new Array('constraints_#/properties/@targetNamespace', 
+				'constraints_#/properties/@elementFormDefault', 
+				'constraints_#/properties/@version', 
+				'constraints_#/definitions/include_type', 
+				'constraints_#/definitions/include_type/items/properties/@schemaLocation', 
+				'constraints_#/definitions/simpleType_type', 
+				'constraints_#/definitions/simpleType_type/items/properties/@name', 
+				'constraints_#/definitions/restriction_type/properties/@base', 
+				'constraints_#/definitions/enumeration_type', 
+				'constraints_#/definitions/enumeration_type/items/properties/@value', 
+				'constraints_#/definitions/union_type/properties/@memberTypes');
+var combinedBoxes= new Array('combined_#/Schema', 
+				'combined_#/properties/@targetNamespace', 
+				'combined_#/properties/@elementFormDefault', 
+				'combined_#/properties/@version', 
+				'combined_#/properties/include', 
+				'combined_#/properties/simpleType', 
+				'combined_#/definitions/include_type', 
+				'combined_#/definitions/include_type/items', 
+				'combined_#/definitions/include_type/items/properties/@schemaLocation', 
+				'combined_#/definitions/simpleType_type', 
+				'combined_#/definitions/simpleType_type/items', 
+				'combined_#/definitions/simpleType_type/items/properties/@name', 
+				'combined_#/definitions/annotation_type', 
+				'combined_#/definitions/annotation_type/properties/documentation', 
+				'combined_#/definitions/simpleType_type/items/properties/annotation', 
+				'combined_#/definitions/restriction_type', 
+				'combined_#/definitions/restriction_type/properties/@base', 
+				'combined_#/definitions/enumeration_type', 
+				'combined_#/definitions/enumeration_type/items', 
+				'combined_#/definitions/enumeration_type/items/properties/@value', 
+				'combined_#/definitions/restriction_type/properties/enumeration', 
+				'combined_#/definitions/simpleType_type/items/properties/restriction', 
+				'combined_#/definitions/union_type', 
+				'combined_#/definitions/union_type/properties/@memberTypes', 
+				'combined_#/definitions/simpleType_type/items/properties/union');
+
+                    
+                    var button_prefix = 'button_';
+                    
+                    /**
+                    * Returns an element in the current HTML document.
+                    *
+                    * @param elementID Identifier of HTML element
+                    * @return               HTML element object
+                    */
+                    function getElementObject(elementID) {
+                    var elemObj = null;
+                    if (document.getElementById) {
+                    elemObj = document.getElementById(elementID);
+                    }
+                    return elemObj;
+                    }
+                    
+                    /**
+                    * Switches the state of a collapseable box, e.g.
+                    * if it's opened, it'll be closed, and vice versa.
+                    *
+                    * @param boxID Identifier of box
+                    */
+                    function switchState(boxID) {
+                    var boxObj = getElementObject(boxID);
+                    var buttonObj = getElementObject(button_prefix + boxID);
+                    if (boxObj == null || buttonObj == null) {
+                    // Box or button not found
+                    } else if (boxObj.style.display == "none") {
+                    // Box is closed, so open it
+                    openBox(boxObj, buttonObj);
+                    } else if (boxObj.style.display == "block") {
+                    // Box is opened, so close it
+                    closeBox(boxObj, buttonObj);
+                    }
+                    }
+                    
+                    /**
+                    * Opens a collapseable box.
+                    *
+                    * @param boxObj       Collapseable box
+                    * @param buttonObj Button controlling box
+                    */
+                    function openBox(boxObj, buttonObj) {
+                    if (boxObj == null || buttonObj == null) {
+                    // Box or button not found
+                    } else {
+                    // Change 'display' CSS property of box
+                    boxObj.style.display = "block";
+                    
+                    // Change text of button
+                    if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                    }
+                    }
+                    }
+                    
+                    /**
+                    * Closes a collapseable box.
+                    *
+                    * @param boxObj       Collapseable box
+                    * @param buttonObj Button controlling box
+                    */
+                    function closeBox(boxObj, buttonObj) {
+                    if (boxObj == null || buttonObj == null) {
+                    // Box or button not found
+                    } else {
+                    // Change 'display' CSS property of box
+                    boxObj.style.display = "none";
+                    
+                    // Change text of button
+                    if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                    }
+                    }
+                    }
+                    
+                    function switchStateForAll(buttonObj, boxList) {
+                    if (buttonObj == null) {
+                    // button not found
+                    } else if (buttonObj.value == "+") {
+                    // Expand all
+                    expandAll(boxList);
+                    buttonObj.value = "-";
+                    } else if (buttonObj.value == "-") {
+                    // Collapse all
+                    collapseAll(boxList);
+                    buttonObj.value = "+";
+                    }
+                    }
+                    
+                    /**
+                    * Closes all boxes in a given list.
+                    *
+                    * @param boxList Array of box IDs
+                    */
+                    function collapseAll(boxList) {
+                    var idx;
+                    for (idx = 0; idx < boxList.length; idx++) {
+                    var boxObj = getElementObject(boxList[idx]);
+                    var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                    closeBox(boxObj, buttonObj);
+                    }
+                    }
+                    
+                    /**
+                    * Open all boxes in a given list.
+                    *
+                    * @param boxList Array of box IDs
+                    */
+                    function expandAll(boxList) {
+                    var idx;
+                    for (idx = 0; idx < boxList.length; idx++) {
+                    var boxObj = getElementObject(boxList[idx]);
+                    var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                    openBox(boxObj, buttonObj);
+                    }
+                    }
+                    
+                    /**
+                    * Update the message presented in the title of the html page.
+                    * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+                    * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+                    * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+                    */
+                    function updatePageTitle(message) {
+                    top.document.title = message;
+                    }
+                    
+                    
+                    
+                    /**
+                    * Finds an HTML element by its ID and makes it floatable over the normal content.
+                    *
+                    * @param x_displacement The difference in pixels to the right side of the window from 
+                    *           the left side of the element.
+                    * @param y_displacement The difference in pixels to the right side of the window from 
+                    *           the top of the element.          
+                    */
+                    function findAndFloat(id, x_displacement, y_displacement){
+                    
+                    var element = getElementObject(id);            
+                    
+                    window[id + "_obj"] = element;
+                    
+                    if(document.layers) {
+                    element.style = element;
+                    }
+                    
+                    element.current_y = y_displacement;      
+                    element.first_time = true;
+                    
+                    element.floatElement = function(){
+                    // It may be closed by an user action.
+                    
+                    // Target X and Y coordinates.
+                    var x, y;
+                    
+                    var myWidth = 0, myHeight = 0;
+                    if( typeof( window.innerWidth ) == 'number' ) {
+                    //Non-IE
+                    myWidth = window.innerWidth;
+                    myHeight = window.innerHeight;
+                    } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                    //IE 6+ in 'standards compliant mode'
+                    myWidth = document.documentElement.clientWidth;
+                    myHeight = document.documentElement.clientHeight;
+                    } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                    //IE 4 compatible
+                    myWidth = document.body.clientWidth;
+                    myHeight = document.body.clientHeight;
+                    }
+                    
+                    
+                    x = myWidth - x_displacement;
+                    
+                    var ns = (navigator.appName.indexOf("Netscape") != -1);               
+                    y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                    document.documentElement.scrollTop : document.body.scrollTop;               
+                    y = y + y_displacement;               
+                    
+                    // The current y is the current coordinate of the floating element.
+                    // This should be at the limit the y target coordinate.
+                    this.current_y += (y - this.current_y)/1.25;
+                    
+                    // Add the pixels constant after the values
+                    // and move the element.
+                    var px = document.layers ? "" : "px";
+                    this.style.left =  x + px;
+                    this.style.top =  this.current_y + px;
+                    
+                    setTimeout(this.id + "_obj.floatElement()", 100);
+                    }
+                    
+                    element.floatElement();
+                    return element;
+                    }
+                    
+                    /**
+                    * Finds an HTML element by its ID and makes it floatable over the normal content.
+                    *
+                    * @param x_displacement The difference in pixels to the right side of the window from 
+                    *           the left side of the element.
+                    * @param y_displacement The difference in pixels to the right side of the window from 
+                    *           the top of the element.          
+                    */
+                    function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+                    
+                    if (!isChunked) {
+                    var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+                    // Make all the tabs invisible.
+                    for (i = 0; i < 3; i++){
+                    var tab = getElementObject(selectIds[i]);
+                    tab.style.display = 'none';
+                    }
+                    var selTab = getElementObject(id);
+                    selTab.style.display = 'block';
+                    } else {
+                    if (id == 'toc_group_by_namespace') {
+                    parent.indexFrame.location = indexFileNamespace;
+                    } else  if (id == 'toc_group_by_location') {
+                    parent.indexFrame.location = indexFileLocation;
+                    } else  if (id == 'toc_group_by_component_type') {
+                    parent.indexFrame.location = indexFileComponent;
+                    }
+                    }
+                    }
+                </script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, annotationsBoxes);" class="control"></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, propertiesBoxes);" class="control"></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, constraintsBoxes);" class="control"></span><span class="globalControlName">Constraints</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, enumerationsBoxes);" class="control"></span><span class="globalControlName">Enumerations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, combinedBoxes);" class="control"></span><span class="globalControlName">Combined</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, patternPropertiesBoxes);" class="control"></span><span class="globalControlName">Pattern Properties</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked onclick="switchStateForAll(this, sourceBoxes);" class="control"></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                  </table><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close"></span></td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div>
+      <table class="rt">
+         <tr>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody><a name="/Schema"></a><div class="componentTitle">Main Schema <a href="#/Schema"><span class="Name">edci_individuals-generated-schema.json</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Document version</b></td>
+                                       <td><b>https://json-schema.org/draft/2019-09/schema#</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Document location</b></td>
+                                       <td>http://data.europa.eu/europass/model/edci_individuals-generated-schema.json</td>
+                                    </tr> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/Schema" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/Schema');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/Schema" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/properties/@targetNamespace"><span class="Name">@targetNamespace<br></span></a><a href="#/properties/@elementFormDefault"><span class="Name">@elementFormDefault<br></span></a><a href="#/properties/@version"><span class="Name">@version<br></span></a><a href="#/properties/include"><span class="Name">include<br></span></a><a href="#/properties/simpleType"><span class="Name">simpleType<br></span></a></td>
+                                                   <td><b>optional<br>optional<br>optional<br>optional<br>optional<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/Schema" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/Schema');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/Schema" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+{
+  "type": "object",
+  "additionalProperties": false,
+  "id": "http://data.europa.eu/europass/model/edci_individuals-generated-schema.json",
+  "$schema": "https://json-schema.org/draft/2019-09/schema#",
+  "properties": {
+    "@targetNamespace": {
+      "type": "string",
+      "format": "uri",
+      "examples": ["http://data.europa.eu/europass/model/credentials#"],
+      "default": ""
+    },
+    "@elementFormDefault": {
+      "type": "string",
+      "examples": ["qualified"],
+      "default": ""
+    },
+    "@version": {
+      "type": "string",
+      "examples": ["0.4.0"],
+      "default": ""
+    },
+    "include": {"$ref": "#/definitions/include_type"},
+    "simpleType": {"$ref": "#/definitions/simpleType_type"}
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/properties/@targetNamespace"></a><div class="componentTitle">Property <a href="#/properties/@targetNamespace"><span class="Name">@targetNamespace</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/properties/@targetNamespace" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/properties/@targetNamespace');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/properties/@targetNamespace" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br><pre><span class="DetailName">Format : </span><span class="tT">uri</span></pre>
+                                                      </td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>http://data.europa.eu/europass/model/credentials#</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/properties/@targetNamespace" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/properties/@targetNamespace');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/properties/@targetNamespace" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@targetNamespace": {
+  "type": "string",
+  "format": "uri",
+  "examples": ["http://data.europa.eu/europass/model/credentials#"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/properties/@elementFormDefault"></a><div class="componentTitle">Property <a href="#/properties/@elementFormDefault"><span class="Name">@elementFormDefault</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/properties/@elementFormDefault" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/properties/@elementFormDefault');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/properties/@elementFormDefault" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>qualified</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/properties/@elementFormDefault" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/properties/@elementFormDefault');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/properties/@elementFormDefault" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@elementFormDefault": {
+  "type": "string",
+  "examples": ["qualified"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/properties/@version"></a><div class="componentTitle">Property <a href="#/properties/@version"><span class="Name">@version</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/properties/@version" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/properties/@version');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/properties/@version" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>0.4.0</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/properties/@version" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/properties/@version');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/properties/@version" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@version": {
+  "type": "string",
+  "examples": ["0.4.0"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/properties/include"></a><div class="componentTitle">Definition <a href="#/properties/include"><span class="Name">include</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/include_type">include_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/properties/include" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/properties/include');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/properties/include" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"include": {"$ref": "#/definitions/include_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/properties/simpleType"></a><div class="componentTitle">Definition <a href="#/properties/simpleType"><span class="Name">simpleType</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/simpleType_type">simpleType_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/properties/simpleType" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/properties/simpleType');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/properties/simpleType" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"simpleType": {"$ref": "#/definitions/simpleType_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/include_type"></a><div class="componentTitle">Definition <a href="#/definitions/include_type"><span class="Name">include_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/include_type" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/include_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/include_type" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Unique Items : </span><span class="tT">false</span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Array Items</b></div>
+                                       </td>
+                                       <td>
+                                          <div id="propertyDependencies" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Items</td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/include_type/items">#/definitions/include_type/items</a></td>
+                                                   <td></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>array</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Items</b></td>
+                                       <td><b>true</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/include_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/include_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/include_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"include_type": {
+  "type": "array",
+  "minItems": 0,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@schemaLocation"],
+    "properties": {
+      "@schemaLocation": {
+        "type": "string",
+        "examples": ["imported/edci_mdr_countries.xsd"],
+        "default": ""
+      }
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/include_type/items"></a><div class="componentTitle">Definition <a href="#/definitions/include_type/items"><span class="Name">include_type/items</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/include_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/include_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/include_type/items" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/include_type/items/properties/@schemaLocation"><span class="Name">@schemaLocation<br></span></a></td>
+                                                   <td><b>required<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/include_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/include_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/include_type/items" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"items": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["@schemaLocation"],
+  "properties": {
+    "@schemaLocation": {
+      "type": "string",
+      "examples": ["imported/edci_mdr_countries.xsd"],
+      "default": ""
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/include_type/items/properties/@schemaLocation"></a><div class="componentTitle">Definition <a href="#/definitions/include_type/items/properties/@schemaLocation"><span class="Name">@schemaLocation</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/include_type/items/properties/@schemaLocation" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/include_type/items/properties/@schemaLocation');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/include_type/items/properties/@schemaLocation" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>imported/edci_mdr_countries.xsd</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/include_type/items/properties/@schemaLocation" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/include_type/items/properties/@schemaLocation');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/include_type/items/properties/@schemaLocation" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@schemaLocation": {
+  "type": "string",
+  "examples": ["imported/edci_mdr_countries.xsd"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type"><span class="Name">simpleType_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/simpleType_type" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/simpleType_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/simpleType_type" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Unique Items : </span><span class="tT">false</span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Array Items</b></div>
+                                       </td>
+                                       <td>
+                                          <div id="propertyDependencies" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Items</td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/simpleType_type/items">#/definitions/simpleType_type/items</a></td>
+                                                   <td></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>array</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Items</b></td>
+                                       <td><b>true</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"simpleType_type": {
+  "type": "array",
+  "minItems": 0,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@name"],
+    "properties": {
+      "@name": {
+        "type": "string",
+        "examples": ["CredentialTypeEnumType"],
+        "default": ""
+      },
+      "annotation": {"$ref": "#/definitions/annotation_type"},
+      "restriction": {"$ref": "#/definitions/restriction_type"},
+      "union": {"$ref": "#/definitions/union_type"}
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type/items"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type/items"><span class="Name">simpleType_type/items</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/simpleType_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/simpleType_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/simpleType_type/items" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/simpleType_type/items/properties/@name"><span class="Name">@name<br></span></a><a href="#/definitions/simpleType_type/items/properties/annotation"><span class="Name">annotation<br></span></a><a href="#/definitions/simpleType_type/items/properties/restriction"><span class="Name">restriction<br></span></a><a href="#/definitions/simpleType_type/items/properties/union"><span class="Name">union<br></span></a></td>
+                                                   <td><b>required<br>optional<br>optional<br>optional<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type/items" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"items": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["@name"],
+  "properties": {
+    "@name": {
+      "type": "string",
+      "examples": ["CredentialTypeEnumType"],
+      "default": ""
+    },
+    "annotation": {"$ref": "#/definitions/annotation_type"},
+    "restriction": {"$ref": "#/definitions/restriction_type"},
+    "union": {"$ref": "#/definitions/union_type"}
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type/items/properties/@name"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type/items/properties/@name"><span class="Name">@name</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/simpleType_type/items/properties/@name" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/simpleType_type/items/properties/@name');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/simpleType_type/items/properties/@name" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>CredentialTypeEnumType</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type/items/properties/@name" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type/items/properties/@name');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type/items/properties/@name" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@name": {
+  "type": "string",
+  "examples": ["CredentialTypeEnumType"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/annotation_type"></a><div class="componentTitle">Definition <a href="#/definitions/annotation_type"><span class="Name">annotation_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/annotation_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/annotation_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/annotation_type" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/annotation_type/properties/documentation"><span class="Name">documentation<br></span></a></td>
+                                                   <td><b>optional<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/annotation_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/annotation_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/annotation_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"annotation_type": {
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "documentation": {"type": "null"}
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/annotation_type/properties/documentation"></a><div class="componentTitle">Definition <a href="#/definitions/annotation_type/properties/documentation"><span class="Name">documentation</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>null</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/annotation_type/properties/documentation" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/annotation_type/properties/documentation');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/annotation_type/properties/documentation" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"documentation": {"type": "null"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type/items/properties/annotation"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type/items/properties/annotation"><span class="Name">annotation</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/annotation_type">annotation_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type/items/properties/annotation" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type/items/properties/annotation');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type/items/properties/annotation" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"annotation": {"$ref": "#/definitions/annotation_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/restriction_type"></a><div class="componentTitle">Definition <a href="#/definitions/restriction_type"><span class="Name">restriction_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/restriction_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/restriction_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/restriction_type" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/restriction_type/properties/@base"><span class="Name">@base<br></span></a><a href="#/definitions/restriction_type/properties/enumeration"><span class="Name">enumeration<br></span></a></td>
+                                                   <td><b>optional<br>optional<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/restriction_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/restriction_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/restriction_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"restriction_type": {
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "@base": {
+      "type": "string",
+      "examples": ["xs:language"],
+      "default": ""
+    },
+    "enumeration": {"$ref": "#/definitions/enumeration_type"}
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/restriction_type/properties/@base"></a><div class="componentTitle">Definition <a href="#/definitions/restriction_type/properties/@base"><span class="Name">@base</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/restriction_type/properties/@base" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/restriction_type/properties/@base');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/restriction_type/properties/@base" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>xs:language</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/restriction_type/properties/@base" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/restriction_type/properties/@base');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/restriction_type/properties/@base" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@base": {
+  "type": "string",
+  "examples": ["xs:language"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/enumeration_type"></a><div class="componentTitle">Definition <a href="#/definitions/enumeration_type"><span class="Name">enumeration_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/enumeration_type" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/enumeration_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/enumeration_type" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Unique Items : </span><span class="tT">false</span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Array Items</b></div>
+                                       </td>
+                                       <td>
+                                          <div id="propertyDependencies" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Items</td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/enumeration_type/items">#/definitions/enumeration_type/items</a></td>
+                                                   <td></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>array</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Items</b></td>
+                                       <td><b>true</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/enumeration_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/enumeration_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/enumeration_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"enumeration_type": {
+  "type": "array",
+  "minItems": 0,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["@value"],
+    "properties": {
+      "@value": {
+        "type": "string",
+        "examples": ["bg"],
+        "default": ""
+      }
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/enumeration_type/items"></a><div class="componentTitle">Definition <a href="#/definitions/enumeration_type/items"><span class="Name">enumeration_type/items</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/enumeration_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/enumeration_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/enumeration_type/items" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/enumeration_type/items/properties/@value"><span class="Name">@value<br></span></a></td>
+                                                   <td><b>required<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/enumeration_type/items" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/enumeration_type/items');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/enumeration_type/items" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"items": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["@value"],
+  "properties": {
+    "@value": {
+      "type": "string",
+      "examples": ["bg"],
+      "default": ""
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/enumeration_type/items/properties/@value"></a><div class="componentTitle">Definition <a href="#/definitions/enumeration_type/items/properties/@value"><span class="Name">@value</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/enumeration_type/items/properties/@value" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/enumeration_type/items/properties/@value');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/enumeration_type/items/properties/@value" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>bg</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/enumeration_type/items/properties/@value" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/enumeration_type/items/properties/@value');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/enumeration_type/items/properties/@value" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@value": {
+  "type": "string",
+  "examples": ["bg"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/restriction_type/properties/enumeration"></a><div class="componentTitle">Definition <a href="#/definitions/restriction_type/properties/enumeration"><span class="Name">enumeration</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/enumeration_type">enumeration_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/restriction_type/properties/enumeration" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/restriction_type/properties/enumeration');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/restriction_type/properties/enumeration" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"enumeration": {"$ref": "#/definitions/enumeration_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type/items/properties/restriction"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type/items/properties/restriction"><span class="Name">restriction</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/restriction_type">restriction_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type/items/properties/restriction" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type/items/properties/restriction');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type/items/properties/restriction" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"restriction": {"$ref": "#/definitions/restriction_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/union_type"></a><div class="componentTitle">Definition <a href="#/definitions/union_type"><span class="Name">union_type</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Properties</b></div>
+                                          <div class="floatRight"><input id="button_properties_#/definitions/union_type" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_#/definitions/union_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="properties_#/definitions/union_type" style="display:block">
+                                             <table class="propertiesTable">
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap; font-family: Segoe UI; font-size: 8pt; color: #808080;">Name</td>
+                                                   <td style="font-family: Segoe UI; font-size: 8pt; color: #808080;">
+                                                      Occurrence
+                                                      </td>
+                                                </tr>
+                                                <tr>
+                                                   <td class="firstColumn" style="white-space: nowrap;"><a href="#/definitions/union_type/properties/@memberTypes"><span class="Name">@memberTypes<br></span></a></td>
+                                                   <td><b>optional<br></b></td>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>object</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Additional Properties</b></td>
+                                       <td><b>false</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/union_type" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/union_type');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/union_type" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"union_type": {
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "@memberTypes": {
+      "type": "string",
+      "examples": ["MDRLanguageCodeEnumType"],
+      "default": ""
+    }
+  }
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/union_type/properties/@memberTypes"></a><div class="componentTitle">Definition <a href="#/definitions/union_type/properties/@memberTypes"><span class="Name">@memberTypes</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Constraints</b></div>
+                                          <div class="floatRight"><input id="button_constraints_#/definitions/union_type/properties/@memberTypes" type="image" src="img/btM.gif" value="-" onclick="switchState('constraints_#/definitions/union_type/properties/@memberTypes');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="constraints_#/definitions/union_type/properties/@memberTypes" style="display:block">
+                                             <div class="annotation">
+                                                <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                   <tr>
+                                                      <td width="100%">
+                                                         <pre><span class="DetailName">Default : </span><span class="tT"></span></pre><br></td>
+                                                   </tr>
+                                                </table>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>string</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Examples</b></td>
+                                       <td><b>MDRLanguageCodeEnumType</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/union_type/properties/@memberTypes" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/union_type/properties/@memberTypes');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/union_type/properties/@memberTypes" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"@memberTypes": {
+  "type": "string",
+  "examples": ["MDRLanguageCodeEnumType"],
+  "default": ""
+}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br><a name="/definitions/simpleType_type/items/properties/union"></a><div class="componentTitle">Definition <a href="#/definitions/simpleType_type/items/properties/union"><span class="Name">union</span></a><span class="qname"></span></div>
+                     <table class="rt">
+                        <tr>
+                           <td class="rt_cornerTopLeft"></td>
+                           <td class="rt_lineTop"></td>
+                           <td class="rt_cornerTopRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_lineLeft"></td>
+                           <td class="rt_content">
+                              <table class="component">
+                                 <tbody> 
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Refers </b></td>
+                                       <td><b><a href="#/definitions/union_type">union_type</a></b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn"><b>Type</b></td>
+                                       <td><b>reference</b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                       <td class="firstColumn">
+                                          <div class="floatLeft"><b>Source</b></div>
+                                          <div class="floatRight"><input id="button_source_#/definitions/simpleType_type/items/properties/union" type="image" src="img/btM.gif" value="-" onclick="switchState('source_#/definitions/simpleType_type/items/properties/union');" class="control"></div>
+                                       </td>
+                                       <td>
+                                          <div id="source_#/definitions/simpleType_type/items/properties/union" style="display:block">
+                                             <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                                <tr>
+                                                   <pre><span class="tEl">
+"union": {"$ref": "#/definitions/union_type"}
+</span></pre>
+                                                </tr>
+                                             </table>
+                                          </div>
+                                       </td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                           </td>
+                           <td class="rt_lineRight"></td>
+                        </tr>
+                        <tr>
+                           <td class="rt_cornerBottomLeft"></td>
+                           <td class="rt_lineBottom"></td>
+                           <td class="rt_cornerBottomRight"></td>
+                        </tr>
+                     </table><br></tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr>
+         <div align="center">JSON Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup></div>
+      </div><script type="text/javascript">
+                        // The namespace is the selected option in the TOC combo.
+                        
+                        // Floats the toolbar.
+                        var globalControls = getElementObject("global_controls");
+                        
+                        if (globalControls != null) {
+                            var browser = navigator.appName;
+                            var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+                            
+                            var IE6 = false;
+                            if ((browser == "Microsoft Internet Explorer")) {
+                                IE6 = true;
+                            }
+                            
+                            //alert (IE6 + " |V| " + version);
+                            
+                            if (IE6) {
+                                // On IE 6 the 'fixed' property is not supported. We must use javascript.
+                                globalControls.style.position = 'absolute';
+                                // The global controls will do not exist in the TOC frame, when chunking.
+                                findAndFloat("global_controls", 225, 30);
+                            } else {
+                                globalControls.style.position = 'fixed';
+                            }
+                            
+                            globalControls.style.right = '0';
+                        }</script></body>
+</html>
