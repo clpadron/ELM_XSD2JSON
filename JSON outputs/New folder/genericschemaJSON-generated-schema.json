@@ -1,0 +1,392 @@
+{
+    "$schema": "https://json-schema.org/draft-04/schema#",
+    "id": "http://data.europa.eu/europass/model/genericschemaJSON-generated-schema.json",
+    "type": "object",
+    "properties": {
+        "@elementFormDefault": {"type": "string"},
+        "@targetNamespace": {"type": "string"},
+        "@version": {"type": "string"},
+        "import": {"$ref": "#/definitions/import_type"},
+        "simpleType": {"$ref": "#/definitions/simpleType_type"},
+        "complexType": {"$ref": "#/definitions/complexType_type"},
+        "group": {"$ref": "#/definitions/group2_type"},
+        "element": {"$ref": "#/definitions/element6_type"}
+    },
+    "definitions": {
+        "import_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@namespace": {"type": "string"},
+                    "@schemaLocation": {"type": "string"}
+                },
+                "required": [
+                    "@namespace",
+                    "@schemaLocation"
+                ]
+            }
+        },
+        "documentation_type": {
+            "type": "object",
+            "properties": {
+                "@lang": {"type": "string"},
+                "#text": {"type": "string"}
+            }
+        },
+        "annotation_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"$ref": "#/definitions/documentation_type"}
+            }
+        },
+        "enumeration_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@value": {"type": "string"}
+                },
+                "required": ["@value"]
+            }
+        },
+        "pattern_type": {
+            "type": "object",
+            "properties": {
+                "@value": {"type": "string"}
+            }
+        },
+        "restriction_type": {
+            "type": "object",
+            "properties": {
+                "@base": {"type": "string"},
+                "enumeration": {"$ref": "#/definitions/enumeration_type"},
+                "pattern": {"$ref": "#/definitions/pattern_type"}
+            }
+        },
+        "union_type": {
+            "type": "object",
+            "properties": {
+                "@memberTypes": {"type": "string"}
+            }
+        },
+        "simpleType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation_type"},
+                    "restriction": {"$ref": "#/definitions/restriction_type"},
+                    "union": {"$ref": "#/definitions/union_type"}
+                },
+                "required": ["@name"]
+            }
+        },
+        "annotation2_type": {
+            "type": "object",
+            "properties": {
+                "documentation": {"type": "string"}
+            }
+        },
+        "element_type": {
+            "type": "object",
+            "properties": {
+                "@form": {"type": "string"},
+                "@maxItems": {"type": "string"},
+                "@minItems": {"type": "string"},
+                "@name": {"type": "string"},
+                "@type": {"type": "string"},
+                "annotation": {"$ref": "#/definitions/annotation2_type"}
+            }
+        },
+        "group_type": {
+            "type": "object",
+            "properties": {
+                "@ref": {"type": "string"}
+            }
+        },
+        "sequence_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"},
+                "group": {"$ref": "#/definitions/group_type"}
+            }
+        },
+        "attribute_type": {
+            "type": "object",
+            "properties": {
+                "@name": {"type": "string"},
+                "@type": {"type": "string"},
+                "@use": {"type": "string"},
+                "annotation": {"$ref": "#/definitions/annotation2_type"}
+            }
+        },
+        "extension_type": {
+            "type": "object",
+            "properties": {
+                "@base": {"type": "string"},
+                "attribute": {"$ref": "#/definitions/attribute_type"}
+            }
+        },
+        "simpleContent_type": {
+            "type": "object",
+            "properties": {
+                "extension": {"$ref": "#/definitions/extension_type"},
+                "restriction": {"$ref": "#/definitions/extension_type"}
+            }
+        },
+        "element2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@form": {"type": "string"},
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation2_type"}
+                },
+                "required": [
+                    "annotation",
+                    "@form",
+                    "@name",
+                    "@type"
+                ]
+            }
+        },
+        "choice_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element2_type"}
+            }
+        },
+        "restriction2_type": {
+            "type": "object",
+            "properties": {
+                "@base": {"type": "string"},
+                "choice": {"$ref": "#/definitions/choice_type"}
+            }
+        },
+        "complexContent_type": {
+            "type": "object",
+            "properties": {
+                "restriction": {"$ref": "#/definitions/restriction2_type"},
+                "extension": {"$ref": "#/definitions/extension_type"}
+            }
+        },
+        "element3_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@form": {"type": "string"},
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"}
+                },
+                "required": [
+                    "@form",
+                    "@name",
+                    "@type"
+                ]
+            }
+        },
+        "choice2_type": {
+            "type": "object",
+            "properties": {
+                "@maxItems": {"type": "string"},
+                "@minItems": {"type": "string"},
+                "element": {"$ref": "#/definitions/element3_type"}
+            }
+        },
+        "complexType_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation2_type"},
+                    "sequence": {"$ref": "#/definitions/sequence_type"},
+                    "simpleContent": {"$ref": "#/definitions/simpleContent_type"},
+                    "attribute": {"$ref": "#/definitions/attribute_type"},
+                    "complexContent": {"$ref": "#/definitions/complexContent_type"},
+                    "choice": {"$ref": "#/definitions/choice2_type"}
+                },
+                "required": ["@name"]
+            }
+        },
+        "element4_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@form": {"type": "string"},
+                    "@maxItems": {"type": "string"},
+                    "@minItems": {"type": "string"},
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"}
+                },
+                "required": [
+                    "@form",
+                    "@name",
+                    "@maxItems",
+                    "@minItems",
+                    "@type"
+                ]
+            }
+        },
+        "sequence2_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element4_type"}
+            }
+        },
+        "attribute2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"},
+                    "@use": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation2_type"}
+                },
+                "required": [
+                    "@name",
+                    "@type",
+                    "@use"
+                ]
+            }
+        },
+        "restriction3_type": {
+            "type": "object",
+            "properties": {
+                "@base": {"type": "string"},
+                "sequence": {"$ref": "#/definitions/sequence2_type"},
+                "attribute": {"$ref": "#/definitions/attribute2_type"}
+            }
+        },
+        "complexContent2_type": {
+            "type": "object",
+            "properties": {
+                "restriction": {"$ref": "#/definitions/restriction3_type"}
+            }
+        },
+        "sequence3_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element_type"}
+            }
+        },
+        "complexType2_type": {
+            "type": "object",
+            "properties": {
+                "complexContent": {"$ref": "#/definitions/complexContent2_type"},
+                "sequence": {"$ref": "#/definitions/sequence3_type"}
+            }
+        },
+        "element5_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@form": {"type": "string"},
+                    "@maxItems": {"type": "string"},
+                    "@minItems": {"type": "string"},
+                    "@name": {"type": "string"},
+                    "@type": {"type": "string"},
+                    "annotation": {"$ref": "#/definitions/annotation2_type"},
+                    "complexType": {"$ref": "#/definitions/complexType2_type"}
+                },
+                "required": [
+                    "@form",
+                    "@name",
+                    "@maxItems",
+                    "@minItems"
+                ]
+            }
+        },
+        "sequence4_type": {
+            "type": "object",
+            "properties": {
+                "element": {"$ref": "#/definitions/element5_type"}
+            }
+        },
+        "group2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "sequence": {"$ref": "#/definitions/sequence4_type"}
+                },
+                "required": [
+                    "sequence",
+                    "@name"
+                ]
+            }
+        },
+        "selector_type": {
+            "type": "object",
+            "properties": {
+                "@xpath": {"type": "string"}
+            }
+        },
+        "unique_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "selector": {"$ref": "#/definitions/selector_type"},
+                    "field": {"$ref": "#/definitions/selector_type"}
+                },
+                "required": [
+                    "@name",
+                    "field",
+                    "selector"
+                ]
+            }
+        },
+        "keyref_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "@name": {"type": "string"},
+                    "@refer": {"type": "string"},
+                    "selector": {"$ref": "#/definitions/selector_type"},
+                    "field": {"$ref": "#/definitions/selector_type"}
+                },
+                "required": [
+                    "@name",
+                    "field",
+                    "selector",
+                    "@refer"
+                ]
+            }
+        },
+        "element6_type": {
+            "type": "object",
+            "properties": {
+                "@name": {"type": "string"},
+                "@type": {"type": "string"},
+                "annotation": {"$ref": "#/definitions/annotation2_type"},
+                "unique": {"$ref": "#/definitions/unique_type"},
+                "key": {"$ref": "#/definitions/unique_type"},
+                "keyref": {"$ref": "#/definitions/keyref_type"}
+            }
+        }
+    }
+}
