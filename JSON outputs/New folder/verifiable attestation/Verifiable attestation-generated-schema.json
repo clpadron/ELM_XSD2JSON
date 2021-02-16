@@ -1,0 +1,193 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "$id": "Verifiable%20attestation2.json",
+    "type": "object",
+    "properties": {
+        "@context": {"$ref": "#/definitions/@context_type"},
+        "id": {
+            "type": "string",
+            "examples": ["did:ebsi-eth:00000001/credentials/1872"],
+            "default": ""
+        },
+        "type": {"$ref": "#/definitions/vcredential_type"},
+        "issuer": {
+            "type": "string",
+            "examples": ["did:ebsi:00000003"],
+            "default": ""
+        },
+        "issuanceDate": {
+            "type": "string",
+            "format": "date-time",
+            "examples": ["2019-06-22T14:11:44Z"],
+            "default": ""
+        },
+        "credentialSubject": {"$ref": "#/definitions/credentialSubject_type"},
+        "credentialStatus": {"$ref": "#/definitions/credentialStatus_type"},
+        "credentialSchema": {"$ref": "#/definitions/credentialSchema_type"},
+        "evidence": {"$ref": "#/definitions/evidence_type"},
+        "proof": {"$ref": "#/definitions/proof_type"}
+    },
+    "definitions": {
+        "@context_type": {
+            "type": "array",
+            "minItems": 0,
+           
+            "items": {
+                "type": "string",
+                "format": "uri",
+                "examples": ["https://www.w3.org/2018/credentials/v1"],
+                "default": ""
+            }
+        },
+        "vcredential_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": ["VerifiableCredential"],
+                "default": ""
+            }
+        },
+        "credentialSubject_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "examples": ["did:ebsi:00000004"],
+                    "default": ""
+                },
+                "currentFamilyName": {
+                    "type": "string",
+                    "examples": ["Skywalker"],
+                    "default": ""
+                },
+                "currentGivenName": {
+                    "type": "string",
+                    "examples": ["Lea"],
+                    "default": ""
+                }
+            }
+        },
+        "credentialStatus_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/status/43"],
+                    "default": ""
+                },
+                "type": {
+                    "type": "string",
+                    "examples": ["CredentialsStatusList2020"],
+                    "default": ""
+                }
+            }
+        },
+        "credentialSchema_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/tsr-123/verifiableattestation.json"],
+                    "default": ""
+                },
+                "type": {
+                    "type": "string",
+                    "examples": ["JsonSchemaValidator2018"],
+                    "default": ""
+                }
+            }
+        },
+        "evidence2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": ["DocumentVerification"],
+                "default": ""
+            }
+        },
+        "evidence_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/evidence/f2aeec97-fc0d-42bf-8ca7-0548192d4231"],
+                    "default": ""
+                },
+                "type": {"$ref": "#/definitions/evidence2_type"},
+                "verifier": {
+                    "type": "string",
+                    "examples": ["https:// essif.europa.eu /issuers/48"],
+                    "default": ""
+                },
+                "evidenceDocument": {
+                    "type": "string",
+                    "examples": ["Passport"],
+                    "default": ""
+                },
+                "subjectPresence": {
+                    "type": "string",
+                    "examples": ["Physical"],
+                    "default": ""
+                },
+                "documentPresence": {
+                    "type": "string",
+                    "examples": ["Physical"],
+                    "default": ""
+                }
+            }
+        },
+        "verificationMethod_type": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "examples": ["EidasCertificate2019"],
+                    "default": ""
+                },
+                "CertSerial": {
+                    "type": "string",
+                    "examples": ["1088321447"],
+                    "default": ""
+                }
+            }
+        },
+        "proof_type": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "examples": ["EcdsaSecp256k1Signature2019"],
+                    "default": ""
+                },
+                "created": {
+                    "type": "string",
+                    "format": "date-time",
+                    "examples": ["2019-06-22T14:11:44Z"],
+                    "default": ""
+                },
+                "proofPurpose": {
+                    "type": "string",
+                    "examples": ["assertionMethod"],
+                    "default": ""
+                },
+                "verificationMethod": {"$ref": "#/definitions/verificationMethod_type"},
+                "proofValue": {
+                    "type": "string",
+                    "examples": ["BD21J4fdlnBvBA+y6D...fnC8Y="],
+                    "default": ""
+                },
+              
+                    "jws": {
+                    "type": "string",
+                    "examples": ["eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X"],
+                    "default": ""
+                }
+            }
+        }
+    }
+}
