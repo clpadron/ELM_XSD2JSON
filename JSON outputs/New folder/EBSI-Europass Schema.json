@@ -85,11 +85,11 @@
         
     "evidence": {
         "id": "https://essif.europa.eu/evidence/f2aeec97-fc0d-42bf-8ca7-0548192d4231",
-        "type": ["DocumentVerification"],
+        "type": ["DocumentVerification, Assessment"],
         "verifier": "https:// essif.europa.eu /issuers/48",
-        "evidenceDocument": "Passport",
-        "subjectPresence": "Physical",
-        "documentPresence": "Physical"},  
+        "evidenceDocument": ["Passport", "Assessment"]
+        
+        },  
         
          "proof":{
         "type": "EcdsaSecp256k1Signature2019",
