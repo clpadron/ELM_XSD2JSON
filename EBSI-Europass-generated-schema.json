@@ -1,0 +1,374 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "type": "object",
+    "properties": {
+        "@context": {"$ref": "#/definitions/@context_type"},
+        "id": {
+            "type": "string",
+            "examples": ["did:ebsi-eth:00000001/credentials/1872"],
+            "default": ""
+        },
+        "type": {"$ref": "#/definitions/VerifiableCredential_type"},
+        "issuer": {
+            "type": "string",
+            "examples": ["did:ebsi:00000001"],
+            "default": ""
+        },
+        "issuanceDate": {
+            "type": "string",
+            "format": "date-time",
+            "examples": ["2019-06-22T14:11:44Z"],
+            "default": ""
+        },
+        "credentialSubject": {"$ref": "#/definitions/credentialSubject_type"},
+        "learningAchievement": {"$ref": "#/definitions/learningAchievement_type"},
+        "learningSpecificationReferences": {"$ref": "#/definitions/learningSpecificationReferences_type"},
+        "targetDescription": {"$ref": "#/definitions/targetDescription_type"},
+        "targetFrameworkName": {"$ref": "#/definitions/targetFrameworkName_type"},
+        "credentialStatus": {"$ref": "#/definitions/credentialStatus_type"},
+        "credentialSchema": {"$ref": "#/definitions/credentialSchema_type"},
+        "evidence": {"$ref": "#/definitions/evidence_type"},
+        "proof": {"$ref": "#/definitions/proof_type"}
+    },
+    "definitions": {
+        "@context_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "format": "uri",
+                "examples": ["https://www.w3.org/2018/credentials/v1"],
+                "default": ""
+            }
+        },
+        "VerifiableCredential_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": ["VerifiableCredential"],
+                "default": ""
+            }
+        },
+        "mailBox_type": {
+            "type": "object",
+            "properties": {
+                "@uri": {
+                    "type": "string",
+                    "examples": ["mailto:leaskywalker@gmail.com"],
+                    "default": ""
+                }
+            }
+        },
+        "credentialSubject_type": {
+            "type": "object",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "examples": ["did:essif:123121"],
+                    "default": ""
+                },
+                "currentFamilyName": {
+                    "type": "string",
+                    "examples": ["Skywalker"],
+                    "default": ""
+                },
+                "currentGivenName": {
+                    "type": "string",
+                    "examples": ["Lea"],
+                    "default": ""
+                },
+                "dateOfBirth": {
+                    "type": "string",
+                    "format": "date",
+                    "examples": ["2021-02-15"],
+                    "default": ""
+                },
+                "mailBox": {"$ref": "#/definitions/mailBox_type"}
+            }
+        },
+        "titlet2_type": {
+            "type": "object",
+            "properties": {
+                "@content-type": {
+                    "type": "string",
+                    "examples": ["text/plain"],
+                    "default": ""
+                },
+                "@lang": {
+                    "type": "string",
+                    "examples": ["en"],
+                    "default": ""
+                },
+                "#text": {
+                    "type": "string",
+                    "examples": ["Degree in Biology"],
+                    "default": ""
+                }
+            }
+        },
+        "title_type": {
+            "type": "object",
+            "properties": {
+                "text": {"$ref": "#/definitions/titlet2_type"}
+            }
+        },
+        "specifiedBy_type": {
+            "type": "object",
+            "properties": {
+                "@idref": {
+                    "type": "string",
+                    "examples": ["urn:epass:qualification:1"],
+                    "default": ""
+                }
+            }
+        },
+        "learningAchievement_type": {
+            "type": "object",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "examples": ["urn:epass:learningAchievement:1"],
+                    "default": ""
+                },
+                "title": {"$ref": "#/definitions/title_type"},
+                "specifiedBy": {"$ref": "#/definitions/specifiedBy_type"}
+            }
+        },
+        "targetName2_type": {
+            "type": "object",
+            "properties": {
+                "@content-type": {
+                    "type": "string",
+                    "examples": ["text/plain"],
+                    "default": ""
+                },
+                "@lang": {
+                    "type": "string",
+                    "examples": ["en"],
+                    "default": ""
+                },
+                "#text": {
+                    "type": "string",
+                    "examples": ["Level 7"],
+                    "default": ""
+                }
+            }
+        },
+        "targetName_type": {
+            "type": "object",
+            "properties": {
+                "text": {"$ref": "#/definitions/targetName2_type"}
+            }
+        },
+        "eqfLevel_type": {
+            "type": "object",
+            "properties": {
+                "@targetFrameworkUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["http://data.europa.eu/snb/eqf/25831c2"],
+                    "default": ""
+                },
+                "@targetNotation": {
+                    "type": "string",
+                    "examples": ["eqf"],
+                    "default": ""
+                },
+                "@uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["http://data.europa.eu/snb/eqf/7"],
+                    "default": ""
+                },
+                "targetName": {"$ref": "#/definitions/targetName_type"}
+            }
+        },
+        "qualification_type": {
+            "type": "object",
+            "properties": {
+                "@id": {
+                    "type": "string",
+                    "examples": ["urn:epass:qualification:1"],
+                    "default": ""
+                },
+                "title": {"$ref": "#/definitions/title_type"},
+                "awardingOpportunities": {"type": "null"},
+                "eqfLevel": {"$ref": "#/definitions/eqfLevel_type"}
+            }
+        },
+        "learningSpecificationReferences_type": {
+            "type": "object",
+            "properties": {
+                "qualification": {"$ref": "#/definitions/qualification_type"}
+            }
+        },
+        "targetDescription2_type": {
+            "type": "object",
+            "properties": {
+                "@content-type": {
+                    "type": "string",
+                    "examples": ["text/plain"],
+                    "default": ""
+                },
+                "@lang": {
+                    "type": "string",
+                    "examples": ["en"],
+                    "default": ""
+                },
+                "#text": {
+                    "type": "string",
+                    "examples": ["Highly specialised knowledge, some of which is at the forefront of knowledge in a field of work or study, as the basis for original thinking and/or research <html:br></html:br>critical awareness of knowledge issues in a field and at the interface between different fields </html:div> <html:div xmlns:html=\"http://www.w3.org/1999/xhtml\" class=\"Skill\">specialised problem-solving skills required in research and/or innovation in order to develop new knowledge and procedures and to integrate knowledge from different fields</html:div> <html:div xmlns:html=\"http://www.w3.org/1999/xhtml\" class=\"Competence\">manage and transform work or study contexts that are complex, unpredictable and require new strategic approaches <html:br></html:br>take responsibility for contributing to professional knowledge and practice and/or for reviewing the strategic performance of teams"],
+                    "default": ""
+                }
+            }
+        },
+        "targetDescription_type": {
+            "type": "object",
+            "properties": {
+                "text": {"$ref": "#/definitions/targetDescription2_type"}
+            }
+        },
+        "targetFrameworkName2_type": {
+            "type": "object",
+            "properties": {
+                "@content-type": {
+                    "type": "string",
+                    "examples": ["text/plain"],
+                    "default": ""
+                },
+                "@lang": {
+                    "type": "string",
+                    "examples": ["en"],
+                    "default": ""
+                },
+                "#text": {
+                    "type": "string",
+                    "examples": ["European Qualifications Framework for lifelong learning - (2008/C 111/01)"],
+                    "default": ""
+                }
+            }
+        },
+        "targetFrameworkName_type": {
+            "type": "object",
+            "properties": {
+                "text": {"$ref": "#/definitions/targetFrameworkName2_type"}
+            }
+        },
+        "credentialStatus_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/status/43"],
+                    "default": ""
+                },
+                "type": {
+                    "type": "string",
+                    "examples": ["CredentialsStatusList2020"],
+                    "default": ""
+                }
+            }
+        },
+        "credentialSchema_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/tsr-123/verifiableattestation.json"],
+                    "default": ""
+                },
+                "type": {
+                    "type": "string",
+                    "examples": ["JsonSchemaValidator2018"],
+                    "default": ""
+                }
+            }
+        },
+        "evidence2_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": ["DocumentVerification, Assessment"],
+                "default": ""
+            }
+        },
+        "evidenceDocument_type": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "string",
+                "examples": ["Passport"],
+                "default": ""
+            }
+        },
+        "evidence_type": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": ["https://essif.europa.eu/evidence/f2aeec97-fc0d-42bf-8ca7-0548192d4231"],
+                    "default": ""
+                },
+                "type": {"$ref": "#/definitions/evidence2_type"},
+                "verifier": {
+                    "type": "string",
+                    "examples": ["https:// essif.europa.eu /issuers/48"],
+                    "default": ""
+                },
+                "evidenceDocument": {"$ref": "#/definitions/evidenceDocument_type"}
+            }
+        },
+        "verificationMethod_type": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "examples": ["EidasCertificate2019"],
+                    "default": ""
+                },
+                "CertSerial": {
+                    "type": "string",
+                    "examples": ["1088321447"],
+                    "default": ""
+                }
+            }
+        },
+        "proof_type": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "examples": ["EcdsaSecp256k1Signature2019"],
+                    "default": ""
+                },
+                "created": {
+                    "type": "string",
+                    "format": "date-time",
+                    "examples": ["2019-06-22T14:11:44Z"],
+                    "default": ""
+                },
+                "proofPurpose": {
+                    "type": "string",
+                    "examples": ["assertionMethod"],
+                    "default": ""
+                },
+                "verificationMethod": {"$ref": "#/definitions/verificationMethod_type"},
+                "jws": {
+                    "type": "string",
+                    "examples": ["eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5X"],
+                    "default": ""
+                },
+                "proofValue": {
+                    "type": "string",
+                    "examples": ["BD21J4fdlnBvBA+y6D...fnC8Y="],
+                    "default": ""
+                }
+            }
+        }
+    }
+}
