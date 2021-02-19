@@ -6,20 +6,10 @@
     "id": "did:ebsi-eth:00000001/credentials/1872",
     "type": ["VerifiableCredential",  "VerifiableAttestation"],
     
-     "issuer": {
-      "organization": {
-         "@id": "urn:epass:org:1",
-         "registration": "ES-21412312",
-         "prefLabel": {
-            "text": {
-               "@content-type": "text/plain",
-               "@lang": "en",
-               "#text": "University of Rioja" } },
-         "hasLocation": null}
-  },
+    "issuer": "did:ebsi:00000001",
     "issuanceDate": "2019-06-22T14:11:44Z",
      "credentialSubject": {
-        "@id": "urn:epass:person:1",
+        "@id": "did:essif:123121",
         "currentFamilyName": "Skywalker",
         "currentGivenName": "Lea",
          "dateOfBirth": "2021-02-15",
